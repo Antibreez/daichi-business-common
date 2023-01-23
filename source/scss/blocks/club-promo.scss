@@ -1,0 +1,117 @@
+.club-promo {
+  padding-top: 40px;
+  margin-bottom: 80px;
+}
+
+.club-promo__block {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.club-promo__text-part {
+  width: 50%;
+  background: linear-gradient(92.41deg, #4b6cb7 0%, #182848 100.19%);
+  padding: 80px;
+  color: #fff;
+}
+
+.club-promo__logo {
+  margin: 0 0 55px;
+}
+
+.club-promo__title {
+  font-size: 36px;
+  line-height: 41px;
+  font-weight: 500;
+  margin: 0 0 16px;
+  color: #fff;
+}
+
+.club-promo__desc {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0;
+}
+
+.club-promo__img-part {
+  width: 50%;
+  background-image: url("../img/daichi-croud.jpg");
+  background-repeat: no-repeat;
+  background-position: left 30% bottom 0;
+  background-size: 110% auto;
+}
+
+@include desktop-m {
+  .club-promo__block {
+    min-height: 520px;
+  }
+
+  .club-promo__text-part {
+    padding: 40px;
+  }
+
+  .club-promo__logo {
+    margin: 0 0 32px;
+    width: 138px;
+    height: auto;
+  }
+}
+
+@include tablet {
+  .club-promo__img-part {
+    background-size: 100% auto;
+  }
+
+  .club-promo {
+    padding-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  .club-promo__block {
+    min-height: 354px;
+  }
+
+  .club-promo__text-part {
+    padding: 24px;
+  }
+
+  .club-promo__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .club-promo__desc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@include mobile {
+  .club-promo {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .club-promo__logo {
+    margin: 0 0 24px;
+  }
+
+  .club-promo__block {
+    flex-direction: column-reverse;
+    border-radius: 0;
+  }
+
+  .club-promo__text-part {
+    width: 100%;
+    padding: 24px 18px;
+  }
+
+  .club-promo__img-part {
+    width: 100%;
+    padding-top: 68.7%;
+    background-position: left 30% bottom -30px;
+  }
+}

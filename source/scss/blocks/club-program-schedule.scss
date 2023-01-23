@@ -1,0 +1,144 @@
+.club-program-schedule {
+  margin-bottom: 120px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.club-program-schedule__title-block {
+  display: flex;
+  width: calc(100% - 80px);
+  margin: 0 auto 40px;
+}
+
+.club-program-schedule__title {
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 500;
+  color: $text-main;
+  margin: 0;
+  padding-right: 16px;
+}
+
+.club-program-schedule__controls {
+  margin-left: auto;
+}
+
+.club-program-schedule__slider {
+  padding-bottom: 24px;
+}
+
+.club-program-schedule__card {
+  width: 20.8%;
+  margin-left: 27px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+
+  &:first-child {
+    margin-left: 40px;
+  }
+
+  &:last-child {
+    margin-right: 40px;
+  }
+}
+
+.club-program-schedule__card-img-block {
+  width: 100%;
+  padding-top: 70%;
+  position: relative;
+}
+
+.club-program-schedule__card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.club-program-schedule__text {
+  padding: 24px;
+  background: linear-gradient(92.41deg, #007fff 0%, #22283f 100.19%);
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  flex-grow: 1;
+}
+
+@include desktop-m {
+  .club-program-schedule {
+    margin-bottom: 56px;
+  }
+
+  .club-program-schedule__card {
+    width: 28%;
+    max-width: 300px;
+  }
+}
+
+@include tablet {
+  .club-program-schedule {
+    margin-bottom: 40px;
+  }
+
+  .club-program-schedule__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .club-program-schedule__title-block {
+    margin-bottom: 31px;
+  }
+
+  .club-program-schedule__card {
+    width: 39%;
+  }
+}
+
+@include mobile {
+  .club-program-schedule {
+    margin-bottom: 40px;
+  }
+
+  .club-program-schedule__card {
+    width: 264px;
+    max-width: none;
+    margin-left: 16px;
+
+    &:first-child {
+      margin-left: 16px;
+    }
+
+    &:last-child {
+      margin-right: 16px;
+    }
+  }
+
+  .club-program-schedule__title-block {
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100% - 32px);
+    margin-bottom: 30px;
+  }
+
+  .club-program-schedule__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 20px;
+    padding-right: 0;
+  }
+
+  .club-program-schedule__controls {
+    margin-left: 0;
+  }
+
+  .club-program-schedule__text {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}

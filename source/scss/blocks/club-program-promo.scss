@@ -1,0 +1,177 @@
+.club-program-promo {
+  margin-bottom: 120px;
+
+  ul.breadcrumbs {
+    display: block;
+  }
+}
+
+.club-program-promo__block {
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.club-program-promo__text-part {
+  width: 50%;
+  padding: 80px;
+  background: linear-gradient(92.41deg, #007fff 0%, #22283f 100.19%);
+}
+
+.club-program-promo__logo {
+  margin: 0 0 112px;
+}
+
+.club-program-promo__title {
+  font-size: 48px;
+  line-height: 55px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.club-program-promo__desc {
+  font-size: 18px;
+  line-height: 27px;
+  color: #fff;
+  margin: 0 0 24px;
+}
+
+.club-program-promo__link {
+  background: #fff;
+  color: $text-main;
+  padding-top: 18px;
+  padding-bottom: 17px;
+  width: 260px;
+  border: none;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $bg;
+    color: $text-main;
+  }
+}
+
+.club-program-promo__img-block {
+  width: 50%;
+  position: relative;
+}
+
+.club-program-promo__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.club-program-promo__chip {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+
+@include desktop-m {
+  .club-program-promo {
+    margin-bottom: 80px;
+  }
+
+  .club-program-promo__block {
+    min-height: 520px;
+  }
+
+  .club-program-promo__text-part {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .club-program-promo__logo {
+    width: 138px;
+    height: auto;
+  }
+
+  .club-program-promo__title {
+    font-size: 36px;
+    line-height: 41px;
+    margin-top: auto;
+  }
+
+  .club-program-promo__chip {
+    width: 150px;
+    height: auto;
+  }
+}
+
+@include tablet {
+  .club-program-promo {
+    margin-bottom: 64px;
+  }
+
+  .club-program-promo__block {
+    min-height: 354px;
+  }
+
+  .club-program-promo__text-part {
+    padding: 24px;
+  }
+
+  .club-program-promo__title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .club-program-promo__desc {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .club-program-promo__link {
+    width: 200px;
+  }
+
+  .club-program-promo__chip {
+    width: 110px;
+    right: 24px;
+  }
+}
+
+@include mobile {
+  .club-program-promo {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+
+    .breadcrumbs {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+
+  .club-program-promo__block {
+    border-radius: 0;
+    flex-direction: column-reverse;
+  }
+
+  .club-program-promo__img-block {
+    width: 100%;
+    padding-top: 68.7%;
+  }
+
+  .club-program-promo__text-part {
+    width: 100%;
+    padding: 24px 18px 31px;
+  }
+
+  .club-program-promo__chip {
+    width: 96px;
+    right: 16px;
+  }
+
+  .club-program-promo__logo {
+    margin: 0 0 24px;
+  }
+}

@@ -1,0 +1,124 @@
+.club-program-advantages {
+  margin-bottom: 120px;
+}
+
+.club-program-advantages__block {
+  display: flex;
+  padding: 40px;
+  background: linear-gradient(92.41deg, #007fff 0%, #22283f 100.19%);
+  border-radius: 16px;
+  max-height: 440px;
+}
+
+.club-program-advantages__title {
+  width: calc((100% - 80px) / 3);
+  font-size: 32px;
+  line-height: 37px;
+  color: #fff;
+  margin: 0;
+  margin-right: auto;
+}
+
+.club-program-advantages__list {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: calc((100% - 80px) / 3 * 2);
+  margin-top: -40px;
+}
+
+.club-program-advantages__item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 40px;
+  width: calc((100% - 40px) / 2);
+
+  img {
+    margin-right: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    color: #fff;
+  }
+}
+
+@include desktop-m {
+  .club-program-advantages {
+    margin-bottom: 80px;
+  }
+
+  .club-program-advantages__block {
+    max-height: none;
+  }
+
+  .club-program-advantages__title {
+    width: 265px;
+  }
+
+  .club-program-advantages__list {
+    width: calc(100% - 305px);
+    align-items: center;
+    align-content: center;
+  }
+
+  .club-program-advantages__item {
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+@include tablet {
+  .club-program-advantages {
+    margin-bottom: 64px;
+  }
+
+  .club-program-advantages__block {
+    flex-direction: column;
+  }
+
+  .club-program-advantages__title {
+    margin: 0 0 40px;
+    width: 100%;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .club-program-advantages__list {
+    width: 100%;
+  }
+
+  .club-program-advantages__item {
+    max-width: none;
+
+    p {
+      font-size: 14px;
+      line-height: 21px;
+      padding-top: 6px;
+    }
+  }
+}
+
+@include mobile {
+  .club-program-advantages {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .club-program-advantages__block {
+    border-radius: 0;
+    padding: 40px 24px;
+  }
+
+  .club-program-advantages__item {
+    margin-top: 24px;
+  }
+
+  .club-program-advantages__list {
+    margin-top: -24px;
+  }
+}

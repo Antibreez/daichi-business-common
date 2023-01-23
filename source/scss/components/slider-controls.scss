@@ -1,0 +1,36 @@
+.slider-controls {
+  display: flex;
+}
+
+.slider-prev,
+.slider-next {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 20px;
+    height: 15px;
+    color: $text-main;
+  }
+
+  &:not(.swiper-button-disabled):hover {
+    cursor: pointer;
+  }
+
+  &.swiper-button-disabled {
+    svg {
+      color: #b4c1d1;
+    }
+  }
+}
+
+.slider-prev {
+  margin-right: 24px;
+
+  svg {
+    transform: rotate(180deg);
+  }
+}

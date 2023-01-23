@@ -1,0 +1,229 @@
+.club-program-persons {
+  margin-bottom: 120px;
+}
+
+.club-program-persons__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.club-program-persons__item {
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  &:nth-child(2) {
+    .club-program-persons__card {
+      background: #006ab8;
+    }
+  }
+
+  &:nth-child(3) {
+    .club-program-persons__card {
+      background: #004d89;
+    }
+  }
+}
+
+.club-program-persons__card {
+  position: relative;
+  padding: 40px;
+  background: #0093d6;
+  border-radius: 16px;
+  display: flex;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    right: 36px;
+    width: 78px;
+    height: 70px;
+    background-image: url("../img/quotes.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.club-program-persons__person {
+  width: 270px;
+  margin-right: 65px;
+  flex-shrink: 0;
+
+  img {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 24px;
+  }
+}
+
+.club-program-persons__name {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px;
+  display: block;
+}
+
+.club-program-persons__job {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+  display: block;
+}
+
+.club-program-persons__text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #fff;
+
+  p.short {
+    max-height: 144px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    line-clamp: 6;
+    box-orient: vertical;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    font-family: "SuisseIntl";
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    span {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    img {
+      margin-left: 16px;
+    }
+  }
+}
+
+.club-program-persons__text.opened {
+  button {
+    span {
+      &:first-child {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        display: inline;
+      }
+    }
+
+    img {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@include desktop-m {
+  .club-program-persons {
+    margin-bottom: 80px;
+  }
+
+  .club-program-persons__person {
+    width: 180px;
+    margin-right: 32px;
+  }
+
+  .club-program-persons__text {
+    font-size: 14px;
+    line-height: 21px;
+
+    p.short {
+      max-height: 147px;
+      -webkit-line-clamp: 7;
+      line-clamp: 7;
+    }
+
+    button {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+  .club-program-persons__name {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .club-program-persons__job {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@include tablet {
+  .club-program-persons {
+    margin-bottom: 64px;
+  }
+
+  .club-program-persons__text {
+    font-size: 14px;
+    line-height: 21px;
+
+    p.short {
+      max-height: 273px;
+      -webkit-line-clamp: 13;
+      line-clamp: 13;
+    }
+  }
+}
+
+@include mobile {
+  .club-program-persons {
+    margin-bottom: 40px;
+  }
+
+  .club-program-persons__card {
+    flex-direction: column;
+    padding: 24px;
+
+    &::after {
+      width: 64px;
+      height: 58px;
+      top: 33px;
+      right: 30px;
+    }
+  }
+
+  .club-program-persons__person {
+    width: 100%;
+    margin: 0 0 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .club-program-persons__text {
+    p.short {
+      max-height: 420px;
+      -webkit-line-clamp: 20;
+      line-clamp: 20;
+    }
+  }
+}
