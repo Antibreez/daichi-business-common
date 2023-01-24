@@ -1,0 +1,54 @@
+a.catalog-table-item__link {
+  font-size: 12px;
+  line-height: 18px;
+  align-self: center;
+  min-height: auto;
+  padding-top: 5px;
+}
+
+.catalog-table-item__avalible {
+  font-size: 12px;
+}
+
+.catalog-table-item__old-price {
+  font-size: 12px;
+}
+
+.catalog-table-item__price {
+  font-size: 14px;
+}
+
+.is--th {
+  font-size: 12px;
+}
+
+.catalog-table-item__avalible {
+  p {
+    margin: 0;
+    line-height: 120%;
+
+    &:not(:last-child) {
+      margin-bottom: 2px;
+    }
+
+    &.is--city {
+      color: #6c7684;
+    }
+  }
+}
+
+.catalog-table-item {
+  &.is--not-available {
+    .catalog-table-item__title,
+    .catalog-table-item__link,
+    .catalog-table-item__avalible,
+    .catalog-table-item__old-price,
+    .catalog-table-item__price {
+      color: #6c7684;
+    }
+
+    .catalog-table-item__link:hover {
+      color: #113ee0;
+    }
+  }
+}

@@ -308,6 +308,7 @@
 
     <meta name="yandex-verification" content="92ace6cf03bf36ab" />
     <meta name="google-site-verification" content="zydBzz8MpPQnKewu5XlZrbZjbUIuOiz2oU-kDh3XTHI" />
+    <link href="./css/style.min.css" type="text/css" rel="stylesheet" />
   </head>
   <body>
     <section id="event-modal" class="modal modal-event" data-modal="modal-event"></section>
@@ -1903,8 +1904,7 @@
                     </div>
                     <div class="is--th catalog-table-item__old-price">
                       <span>
-                        Рекомендуемая<br />
-                        розничная цена
+                        Розн. цена
                         <a
                           class="catalog-table-sort"
                           href="/catalog/conditioning/nastennye-split-sistemy/nastennye-komplekt/?view=table&sort-table=price&order=asc">
@@ -1946,22 +1946,53 @@
                     <div class="catalog-table-item__avalible is--td">
                       <span class="table-mobile-title">Наличие, шт.</span>
 
-                      > 50 на складе
+                      <p class="is--stock">> 50 на складе</p>
+                      <p class="is--city">50 шт. Волгоград</p>
+                      <p class="is--city">50 шт. Москва</p>
                     </div>
 
                     <div class="catalog-table-item__old-price is--td">
                       <span class="table-mobile-title">Ваша цена</span>
+                      14 383,08 ₽
                     </div>
 
-                    <div class="catalog-table-item__price is--td">
-                      <a class="catalog-table-item__more js-price-not-defined" href="javascript:void(0);">
-                        Уточните цену <br />
-                        у вашего <br />
-                        менеджера
-                      </a>
-                    </div>
+                    <div class="catalog-table-item__price is--td">14 383,08 ₽</div>
 
-                    <div class="catalog-table-item__amount is--td"></div>
+                    <div class="catalog-table-item__amount is--td">
+                      <div
+                        class="amount points qnt-selector-initialized"
+                        data-available-qnt="80"
+                        data-product-id="10985"
+                        data-qnt-selector="">
+                        <div class="amount__body">
+                          <button
+                            class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
+                            data-type="reduce"
+                            type="button">
+                            ‐
+                          </button>
+                          <span class="wrap-amount-input">
+                            <input class="amount-input js-amount-input" type="text" value="0" readonly="" />
+                          </span>
+                          <button
+                            class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
+                            data-type="increase"
+                            type="button">
+                            +
+                          </button>
+                        </div>
+
+                        <div class="amount__btn js-amount-init-btn">
+                          <button class="amount-buy-btn js-amount-buy-btn">
+                            <span class="ico-amount-cart">
+                              <svg class="ico-svg">
+                                <use xlink:href="#ico-cart"></use>
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="catalog-table-item is--tr js-data-row" data-element-id="7900" data-score="">
                     <div class="catalog-table-item__title is--td">
@@ -1988,24 +2019,57 @@
                     <div class="catalog-table-item__avalible is--td">
                       <span class="table-mobile-title">Наличие, шт.</span>
 
-                      > 50 на складе
+                      <p class="is--city">50 шт. Волгоград</p>
+                      <p class="is--city">50 шт. Москва</p>
                     </div>
 
                     <div class="catalog-table-item__old-price is--td">
                       <span class="table-mobile-title">Ваша цена</span>
+                      36 999 ₽
                     </div>
 
-                    <div class="catalog-table-item__price is--td">
-                      <a class="catalog-table-item__more js-price-not-defined" href="javascript:void(0);">
-                        Уточните цену <br />
-                        у вашего <br />
-                        менеджера
-                      </a>
-                    </div>
+                    <div class="catalog-table-item__price is--td">30 999 ₽</div>
 
-                    <div class="catalog-table-item__amount is--td"></div>
+                    <div class="catalog-table-item__amount is--td">
+                      <div
+                        class="amount points qnt-selector-initialized"
+                        data-available-qnt="80"
+                        data-product-id="10985"
+                        data-qnt-selector="">
+                        <div class="amount__body">
+                          <button
+                            class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
+                            data-type="reduce"
+                            type="button">
+                            ‐
+                          </button>
+                          <span class="wrap-amount-input">
+                            <input class="amount-input js-amount-input" type="text" value="0" readonly="" />
+                          </span>
+                          <button
+                            class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
+                            data-type="increase"
+                            type="button">
+                            +
+                          </button>
+                        </div>
+
+                        <div class="amount__btn js-amount-init-btn">
+                          <button class="amount-buy-btn js-amount-buy-btn">
+                            <span class="ico-amount-cart">
+                              <svg class="ico-svg">
+                                <use xlink:href="#ico-cart"></use>
+                              </svg>
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="catalog-table-item is--tr js-data-row" data-element-id="7894" data-score="">
+                  <div
+                    class="catalog-table-item is--tr js-data-row is--not-available"
+                    data-element-id="7894"
+                    data-score="">
                     <div class="catalog-table-item__title is--td">
                       <span class="table-mobile-title"> Наименование, артикул </span>
                       <span
@@ -2030,11 +2094,12 @@
                     <div class="catalog-table-item__avalible is--td">
                       <span class="table-mobile-title">Наличие, шт.</span>
 
-                      > 50 на складе
+                      нет в наличии
                     </div>
 
                     <div class="catalog-table-item__old-price is--td">
                       <span class="table-mobile-title">Ваша цена</span>
+                      36 999 ₽
                     </div>
 
                     <div class="catalog-table-item__price is--td">
@@ -2045,7 +2110,67 @@
                       </a>
                     </div>
 
-                    <div class="catalog-table-item__amount is--td"></div>
+                    <div class="catalog-table-item__amount is--td">
+                      <div class="amount">
+                        <div class="amount__btn">
+                          <a
+                            class="btn btn_border btn_border-blue js-analogs"
+                            href="/catalog/conditioning/multisplit-sistemy/multi-vnutrennie-bloki/kentatsu_482/KMGBA70HZAN1/#analogs">
+                            Аналоги
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="catalog-table-item is--tr js-data-row is--not-available"
+                    data-element-id="7894"
+                    data-score="">
+                    <div class="catalog-table-item__title is--td">
+                      <span class="table-mobile-title"> Наименование, артикул </span>
+                      <span
+                        ><a
+                          data-element-id="7894"
+                          class="add-favorites-link js-add-favorites"
+                          href="/catalog/conditioning/nastennye-split-sistemy/nastennye-komplekt/FDXM50F3_RXS50L/"
+                          ><span class="ico-favorites">
+                            <svg class="ico-svg">
+                              <use xlink:href="#ico-favorites"></use></svg></span
+                        ></a>
+                        <a
+                          href="/catalog/conditioning/nastennye-split-sistemy/nastennye-komplekt/FDXM50F3_RXS50L/"
+                          class="catalog-table-item__link"
+                          Daikin
+                          title="FDXM50F3/RXS50L">
+                          FDXM50F3/RXS50L
+                        </a>
+                      </span>
+                    </div>
+
+                    <div class="catalog-table-item__avalible is--td">
+                      <span class="table-mobile-title">Наличие, шт.</span>
+
+                      нет в наличии
+                    </div>
+
+                    <div class="catalog-table-item__old-price is--td">
+                      <span class="table-mobile-title">Ваша цена</span>
+                      36 999 ₽
+                    </div>
+
+                    <div class="catalog-table-item__price is--td">36 999 ₽</div>
+
+                    <div class="catalog-table-item__amount is--td">
+                      <div class="amount">
+                        <div class="amount__btn">
+                          <a
+                            class="btn btn_border btn_border-blue js-analogs"
+                            href="/catalog/conditioning/multisplit-sistemy/multi-vnutrennie-bloki/kentatsu_482/KMGBA70HZAN1/#analogs">
+                            Аналоги
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="catalog-table-item is--tr js-data-row" data-element-id="7544" data-score="">
                     <div class="catalog-table-item__title is--td">
@@ -5772,5 +5897,7 @@
 
       gtag("config", "G-NB47G1DQQ1");
     </script>
+
+    <script src="./js/main.min.js"></script>
   </body>
 </html>
