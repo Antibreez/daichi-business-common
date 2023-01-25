@@ -1,4 +1,5 @@
-a.catalog-table-item__link {
+a.catalog-table-item__link,
+a.catalog-series-table__link {
   font-size: 12px;
   line-height: 18px;
   align-self: center;
@@ -6,7 +7,8 @@ a.catalog-table-item__link {
   padding-top: 5px;
 }
 
-.catalog-table-item__avalible {
+.catalog-table-item__avalible,
+.catalog-series-table__avalible {
   font-size: 12px;
 }
 
@@ -14,7 +16,13 @@ a.catalog-table-item__link {
   font-size: 12px;
 }
 
-.catalog-table-item__price {
+.catalog-series-table__num {
+  font-size: 12px;
+}
+
+.catalog-table-item__price,
+.catalog-series-table__price,
+.catalog-series-table__old {
   font-size: 14px;
 }
 
@@ -22,7 +30,8 @@ a.catalog-table-item__link {
   font-size: 12px;
 }
 
-.catalog-table-item__avalible {
+.catalog-table-item__avalible,
+.catalog-series-table__avalible {
   p {
     margin: 0;
     line-height: 120%;
@@ -50,5 +59,95 @@ a.catalog-table-item__link {
     .catalog-table-item__link:hover {
       color: #113ee0;
     }
+  }
+}
+
+tr {
+  &.is--not-available {
+    .catalog-series-table__link,
+    .catalog-series-table__avalible,
+    .catalog-series-table__price {
+      color: #6c7684;
+    }
+
+    .catalog-series-table__link:hover {
+      color: #113ee0;
+    }
+  }
+}
+
+.catalog-series-table {
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media only screen and (max-width: 767px) {
+      padding: 0;
+    }
+  }
+}
+
+.catalog-series-table th.catalog-series-table__price,
+.catalog-series-table td.catalog-series-table__price {
+  text-align: left;
+}
+
+.catalog-series-table {
+  @media only screen and (max-width: 767px) {
+    .slick-initialized .slick-slide {
+      display: flex;
+      flex-direction: column;
+
+      td:last-child {
+        margin-top: auto;
+      }
+    }
+
+    .slick-initialized .catalog-series-table__head {
+      display: none;
+    }
+  }
+}
+
+.cart-stock__item {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+
+  .is--city {
+    color: #6c7684;
+  }
+
+  span {
+    &:nth-child(n + 3) {
+      margin-left: 8px;
+
+      &::before {
+        content: "/";
+        margin-right: 8px;
+      }
+
+      @media only screen and (max-width: 767px) {
+        margin-top: 5px;
+        width: 100%;
+        margin-left: 36px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+}
+
+.price-pane-old__value {
+  margin-bottom: 2px;
+
+  &.is--city {
+    color: #6c7684;
   }
 }
