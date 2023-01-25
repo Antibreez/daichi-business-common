@@ -110,16 +110,32 @@ tr {
 }
 
 .cart-stock__item {
-  font-size: 12px;
-  display: flex;
-  align-items: center;
+  .is--stock,
+  .is--city {
+    font-size: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: inline-block;
+  }
 
   .is--city {
     color: #6c7684;
   }
 
-  span {
-    &:nth-child(n + 3) {
+  .is--city,
+  .is--stock {
+    @media only screen and (max-width: 767px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      &:nth-of-type(2) {
+        padding-top: 3px;
+      }
+    }
+
+    &:nth-of-type(n + 3) {
       margin-left: 8px;
 
       &::before {
