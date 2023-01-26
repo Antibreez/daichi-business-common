@@ -3,6 +3,7 @@ a.catalog-table-item__link {
   line-height: 18px;
   align-self: center;
   min-height: auto;
+  max-height: none;
 }
 
 .catalog-table-item__link-model {
@@ -17,6 +18,16 @@ a.catalog-table-item__link {
   max-height: none;
   padding-top: 14px;
   padding-bottom: 14px;
+
+  @media only screen and (max-width: 767px) {
+    padding-top: 0px;
+  }
+}
+
+.catalog-table-item__title.is--td {
+  @media only screen and (max-width: 767px) {
+    height: auto;
+  }
 }
 
 .catalog-table-item__title-picture {
@@ -39,6 +50,10 @@ a.catalog-table-item__link {
 .catalog-table-item__avalible,
 .catalog-series-table__avalible {
   font-size: 12px;
+
+  &.is--td {
+    height: auto;
+  }
 }
 
 .catalog-table-item__avalible,
@@ -48,11 +63,73 @@ a.catalog-table-item__link {
     line-height: 120%;
 
     &:not(:last-child) {
-      margin-bottom: 2px;
+      margin-bottom: 3px;
     }
 
     &.is--city {
       color: #6c7684;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: color 0.2s;
+
+      .catalog-table-item__avalible-tooltip,
+      .catalog-series-table__avalible-tooltip {
+        position: absolute;
+        display: block;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 9px 12px;
+        background-color: #fff;
+        color: #6c7684;
+        max-width: 222px;
+        width: max-content;
+        white-space: normal;
+        border-radius: 2px;
+        box-shadow: 0px 4px 10px rgba(86, 91, 121, 0.25);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0s 0.3s;
+
+        b {
+          color: #1a1a1a;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -7px;
+          left: 50%;
+          width: 14px;
+          height: 14px;
+          background-color: #fff;
+          transform: translateX(-50%) rotate(45deg);
+        }
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: #6c7684;
+        margin-left: 4px;
+        transition: fill 0.2s;
+      }
+
+      &:hover {
+        color: #1a1a1a;
+
+        .catalog-table-item__avalible-tooltip,
+        .catalog-series-table__avalible-tooltip {
+          opacity: 1;
+          visibility: visible;
+          transition-delay: 0s;
+        }
+
+        svg {
+          fill: #1a1a1a;
+        }
+      }
     }
   }
 }
@@ -130,5 +207,35 @@ a.catalog-table-item__link {
     margin-right: 2px;
     transform: translateY(1px);
     background-image: url('data:image/svg+xml;utf8,<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.76777 4.73223C8.74408 5.70854 8.74408 7.29146 7.76777 8.26777C6.79146 9.24408 5.20854 9.24408 4.23223 8.26777C3.25592 7.29146 3.25592 5.70854 4.23223 4.73223C5.20854 3.75592 6.79146 3.75592 7.76777 4.73223" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 2.5V1.5" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 11.5V10.5" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.17992 3.31813L9.53492 2.96312" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.46508 10.0369L2.82008 9.68187" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 6.5H11" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 6.5H2" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.17992 9.68187L9.53492 10.0369" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.46508 2.96312L2.82008 3.31813" stroke="rgba(108, 118, 132, 1)" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  }
+}
+
+.catalog-table-item.is--tr {
+  @media only screen and (max-width: 767px) {
+    &:first-child {
+      display: none;
+    }
+  }
+}
+
+.catalog-table-item {
+  &.is--not-available {
+    .catalog-table-item__title,
+    .catalog-table-item__link,
+    .catalog-table-item__avalible,
+    .catalog-table-item__old-price,
+    .catalog-table-item__price {
+      color: #6c7684;
+    }
+
+    .catalog-table-item__link:hover {
+      color: #113ee0;
+    }
+
+    .catalog-table-item__title-picture {
+      img {
+        opacity: 0.5;
+      }
+    }
   }
 }
