@@ -46,6 +46,10 @@ a.catalog-series-table__link {
 .catalog-table-item.is--not-available .catalog-table-item__link:hover {
   color: #113ee0; }
 
+@media only screen and (max-width: 767px) {
+  .catalog-table-item.is--tr:first-child {
+    display: none; } }
+
 tr.is--not-available .catalog-series-table__link,
 tr.is--not-available .catalog-series-table__avalible,
 tr.is--not-available .catalog-series-table__price {
