@@ -1,0 +1,15 @@
+.breadcrumbs-stock__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f4f4f8;
+  border-radius: 8px; }
+  .breadcrumbs-stock__inner .dropdown-menu {
+    padding: 8px 24px 8px 56px;
+    background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.42773 10.7163C3.42773 10.0784 3.73196 9.47886 4.24671 9.10221L10.8181 4.29385C11.5214 3.77926 12.4769 3.77926 13.1802 4.29385L19.7516 9.10221C20.2664 9.47886 20.5706 10.0784 20.5706 10.7163V18.5725C20.5706 19.6771 19.6752 20.5725 18.5706 20.5725H15.2548C14.7025 20.5725 14.2548 20.1248 14.2548 19.5725V17.3914C14.2548 16.8391 13.8071 16.3914 13.2548 16.3914H11.9992H10.7435C10.1912 16.3914 9.74352 16.8391 9.74352 17.3914V19.5725C9.74352 20.1248 9.29581 20.5725 8.74352 20.5725H5.42773C4.32316 20.5725 3.42773 19.6771 3.42773 18.5725V10.7163Z' stroke='rgba(40, 88, 255, 1)' stroke-width='1.5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: left 16px top 50%; }
+  .breadcrumbs-stock__inner .dropdown-menu__title {
+    display: block;
+    font-size: 12px;
+    line-height: 120%; }
