@@ -1241,55 +1241,703 @@
           </div>
         </div>
         <section class="section-main">
-          <div class="api-page__promo">
-            <div class="api-page__promo-content">
-              <h1 class="api-page__promo-title">Подключайте API Daichi Бизнес!</h1>
-              <p class="api-page__promo-desc">
-                API позволяет интегрировать ваши онлайн-магазины и&nbsp;учётные системы с&nbsp;базами данных Daichi Бизнес.<br/>
-                Вы&nbsp;будете получать актуальную информацию по&nbsp;товарам и&nbsp;их&nbsp;остаткам онлайн.
-              </p>
-              <button class="api-page__promo-btn btn">Получить ключ API</button>
+          <div class="api-page">
+            <div class="api-page__promo">
+              <div class="api-page__promo-content">
+                <h1 class="api-page__promo-title">Подключайте API Daichi&nbsp;Бизнес!</h1>
+                <p class="api-page__promo-desc">
+                  API позволяет интегрировать ваши онлайн-магазины и&nbsp;учётные системы с&nbsp;базами данных Daichi
+                  Бизнес.<br />
+                  Вы&nbsp;будете получать актуальную информацию по&nbsp;товарам и&nbsp;их&nbsp;остаткам онлайн.
+                </p>
+                <a class="api-page__promo-btn btn">Получить ключ API</a>
+              </div>
+            </div>
+
+            <div class="api-page__block">
+              <h2>Общие входные параметры</h2>
+              <div class="api-page__part">
+                <div class="api-page__code">GET https://api.daichi.ru/b2b/<версия>/<метод>?<параметры></div>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Положение</th>
+                      <th>Тип</th>
+                      <th>Обязательный</th>
+                      <th>Описание</th>
+                    </tr>
+                    <tr>
+                      <td>version</td>
+                      <td>Path</td>
+                      <td>Enum</td>
+                      <td>Да</td>
+                      <td>Версия API</td>
+                    </tr>
+                    <tr>
+                      <td>access-token</td>
+                      <td>Path</td>
+                      <td>String</td>
+                      <td>Да</td>
+                      <td>Авторизационный ключ (идентификатор партнёра)</td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="api-page__note">
+                  Взаимодействие с сервисом происходит в режиме онлайн с помощью стандартного протокола HTTPS. Ответ
+                  предоставляется в формате JSON
+                </p>
+                <p class="api-page__text-block">
+                  Индикатором выполнения запросов служат стандартный http status code:<br />
+                  <b>2xx</b> - успешное выполнение<br />
+                  <b>4xx</b> - ошибки на стороне клиента<br />
+                  <b>5хх</b> - ошибки на стороне сервера
+                </p>
+              </div>
+              <div class="api-page__part">
+                <h3>Пример ответа при ошибке</h3>
+                <div class="api-page__code-block">
+                  <!--prettier-ignore-->
+                  <div class="api-page__code api-page__code--example">
+                    <pre><code>Response:
+Status: 401
+{
+        <span class="red">"Result"</span>: {
+                <span class="red">"error"</span>: <span class="blue">"Неверный API KEY"</span>,
+                <span class="red">"success"</span>: <span class="blue"><b>false</b></span>
+        },
+        <span class="red">"Time"</span>: <span class="green">0.1100621223449707</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="api-page__block">
+              <h2>Получение списка доступных складов</h2>
+              <div class="api-page__part">
+                <div class="api-page__code">
+                  Method: GET<br />
+                  Path: /stores/get
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Входные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Положение</th>
+                      <th>Тип</th>
+                      <th>Обязательный</th>
+                      <th>Описание</th>
+                    </tr>
+                    <tr>
+                      <td>version</td>
+                      <td>Path</td>
+                      <td>Enum</td>
+                      <td>Да</td>
+                      <td>Версия API</td>
+                    </tr>
+                    <tr>
+                      <td>access-token</td>
+                      <td>Path</td>
+                      <td>String</td>
+                      <td>Да</td>
+                      <td>Авторизационный ключ (идентификатор партнёра)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Выходные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Тип</th>
+                      <th>Описание</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>Result</td>
+                      <td>Object list</td>
+                      <td>Список складов</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в Result</td>
+                    </tr>
+                    <tr>
+                      <td>NAME</td>
+                      <td>String</td>
+                      <td>Наименование склада</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>XML_ID</td>
+                      <td>GUID</td>
+                      <td>Идентификатор склада</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>IS_DEFAULT</td>
+                      <td>Boolean</td>
+                      <td colspan="3">
+                        <span class="dot">false</span>
+                        <br />
+                        <span class="dot">true</span>
+                        <br /><br />
+                        Склад со значение IS_DEFAULT = true (склад по-умолчанию) первым показывается в каталоге для
+                        отображения доступности оборудования. Актуально для партнёров с несколькими складами.
+                        <br /><br />
+                        <span class="small">
+                          Для склада по-умолчанию в методах, где требуется указать параметр store-id, в качестве
+                          значения параметра может быть указано значение default. Таким образом, для партнёров с одним
+                          складом метод stores/get можно не использовать, а в качестве store-id в других методах сразу
+                          указывать значение default, т.к. единственный доступный склад и будет складом по-умолчанию.
+                        </span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Пример запроса</h3>
+                <div class="api-page__code">
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/stores/get/?access-token=access-demo">
+                    <span>https://api.daichi.ru/b2b/v1/stores/get/?access-token=access-demo</span>
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Формат ответа</h3>
+                <div class="api-page__code-block">
+                  <!--prettier-ignore-->
+                  <div class="api-page__code api-page__code--example">
+                    <pre><code>{
+        <span class="red">"Result"</span>: [
+                {
+                        <span class="red">"NAME"</span>: <span class="blue">"Новосибирск"</span>,
+                        <span class="red">"XML_ID"</span>: <span class="blue">"e7be65c5-f376-11ea-8047-00155db05a13"</span>
+                        <span class="red">"IS_DEFAULT"</span>: <span class="blue">false</span>
+                },
+                {
+                        <span class="red">"NAME"</span>: <span class="blue">"Волгоград"</span>,
+                        <span class="red">"XML_ID"</span>: <span class="blue">"eb3dda72-62bd-11ea-bfed-00155df9f508"</span>
+                        <span class="red">"IS_DEFAULT"</span>: <span class="blue">true</span>
+                },
+        ],
+        <span class="red">"Time"</span>: <span class="green">0.7249960899353027</span>
+}</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="api-page__block">
+              <h2>Получение списка доступных складов</h2>
+              <div class="api-page__part">
+                <div class="api-page__code">
+                  Method: GET<br />
+                  Path: /products/get
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Входные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Положение</th>
+                      <th>Тип</th>
+                      <th>Обязательный</th>
+                      <th>Описание</th>
+                    </tr>
+                    <tr>
+                      <td>version</td>
+                      <td>Path</td>
+                      <td>Enum</td>
+                      <td>Да</td>
+                      <td>Версия API</td>
+                    </tr>
+                    <tr>
+                      <td>access-token</td>
+                      <td>Path</td>
+                      <td>String</td>
+                      <td>Да</td>
+                      <td>Авторизационный ключ (идентификатор партнёра)</td>
+                    </tr>
+                    <tr>
+                      <td>store-id</td>
+                      <td>Path</td>
+                      <td>GUID</td>
+                      <td>Да</td>
+                      <td>Идентификатор склада (или значение default для склада по-умолчанию)</td>
+                    </tr>
+                    <tr>
+                      <td>filter[NAME]</td>
+                      <td>Path</td>
+                      <td>GUID</td>
+                      <td>Нет</td>
+                      <td>Фильтр результатов по артикулу товара.</td>
+                    </tr>
+                    <tr>
+                      <td>filter[XML_ID]</td>
+                      <td>Path</td>
+                      <td>String</td>
+                      <td>Нет</td>
+                      <td>Фильтр результатов по идентификатору товара.</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Выходные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Тип</th>
+                      <th>Описание</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>Result</td>
+                      <td>Object list</td>
+                      <td>Список карточек товаров</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в Result</td>
+                    </tr>
+                    <tr>
+                      <td>NAME</td>
+                      <td>String</td>
+                      <td>Артикул товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>XML_ID</td>
+                      <td>GUID</td>
+                      <td>Идентификатор товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PARAMS</td>
+                      <td>Object</td>
+                      <td>Параметры товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PRICES</td>
+                      <td>Object</td>
+                      <td>Массив цен на товар</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>STORE</td>
+                      <td>Object</td>
+                      <td>Информация о наличии товара на складе</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в PARAMS</td>
+                    </tr>
+                    <tr>
+                      <td>BRAND</td>
+                      <td>String</td>
+                      <td>Бренд</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ATTR_L_SERIA</td>
+                      <td>String</td>
+                      <td>Серия</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ATTR_L_IN_UNIT_TYPE</td>
+                      <td>String</td>
+                      <td>Тип внутреннего блока</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ATTR_L_GOODGROUP</td>
+                      <td>String</td>
+                      <td>Группа товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ATTR_L_GOODTYPE</td>
+                      <td>String</td>
+                      <td>Тип товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>ATTR_RUS_NAME_AX</td>
+                      <td>String</td>
+                      <td>Наименование товара</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в PRICES</td>
+                    </tr>
+                    <tr>
+                      <td>XML_ID</td>
+                      <td>Enum</td>
+                      <td>Идентификатор цены</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>NAME</td>
+                      <td>String</td>
+                      <td colspan="2">
+                        Наименование цены<br />
+                        Розничная цена указывается с учётом персональной скидки партнёра.
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>PRICE</td>
+                      <td>Float</td>
+                      <td>Значение цены</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>CURRENCY</td>
+                      <td>Enum</td>
+                      <td>
+                        Код валюты<br />
+                        Возможные значения:
+                        <br />
+                        <br />
+                        <span class="dot">RUR</span><br />
+                        <span class="dot">USD</span><br />
+                        <span class="dot">EUR</span><br />
+                        <span class="dot">KZT</span>
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в STORE</td>
+                    </tr>
+                    <tr>
+                      <td>NAME</td>
+                      <td>String</td>
+                      <td>Наименование склада</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>XML_ID</td>
+                      <td>GUID</td>
+                      <td>Идентификатор склада</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>STORE_AMOUNT</td>
+                      <td>Integer</td>
+                      <td colspan="2">Количество свободного (не забронированного) товара на складе (‘На складе’)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>DELIVERY_AMOUNT</td>
+                      <td>Integer</td>
+                      <td colspan="2">
+                        Количество товара, которое может быть доставлено на склад в&nbsp;течении 14 дней (‘В пути’)
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>STORE_PARAMS_INFO</td>
+                      <td>Object</td>
+                      <td colspan="2">Ограничение на инфорацию о доступности товара на складе</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>DELIVERY_PARAMS_INFO</td>
+                      <td>Object</td>
+                      <td colspan="2">Ограничение на инфорацию о доступности товара в пути</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в STORE_PARAMS_INFO</td>
+                    </tr>
+                    <tr>
+                      <td>LIMIT</td>
+                      <td>Integer</td>
+                      <td colspan="3">
+                        Количество, больше которого не показывется точное значение. При превышении ограничения на
+                        портале точное значение заменяется выражением ‘>’
+                        <br /><br />
+                        (например, > 50 на складе)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>HIDE_MORE_LIMIT</td>
+                      <td>Boolean</td>
+                      <td colspan="3">
+                        <span class="dot"> false (лимит не превышен. STORE_AMOUNT показывает точное значение) </span>
+                        <br />
+                        <span class="dot"> true (лимит превышен. STORE_AMOUNT ограничено значением LIMIT) </span>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Пример запроса</h3>
+                <div class="api-page__code">
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13">
+                    <span
+                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13</span
+                    >
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=default">
+                    <span>https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=default</span>
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bNAME%5d=KSRQ80HFAN1">
+                    <span
+                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bNAME%5d=KSRQ80HFAN1</span
+                    >
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bXML_ID%5d=b756c377-6912-11ea-bfef-00155df9f508">
+                    <span
+                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bXML_ID%5d=b756c377-6912-11ea-bfef-00155df9f508</span
+                    >
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Формат ответа</h3>
+                <div class="api-page__code-block">
+                  <!--prettier-ignore-->
+                  <div class="api-page__code api-page__code--example">
+                    <pre><code>{
+        <span class="red">"Result"</span>: {
+                <span class="red">"15608":</span> {
+                        <span class="red">"NAME"</span>: <span class="blue">"Climate 5000 RAC 2,6-3 IBW"</span>,
+                        <span class="red">"XML_ID"</span>: <span class="blue">"7849a166-66ef-11eb-804b-00155db05a13"</span>,
+                        <span class="red">"PARAMS:"</span>: {
+                                <span class="red">"BRAND"</span>: <span class="blue">"Bosch"</span>,
+                                <span class="red">"ATTR_L_SERIA"</span>: <span class="blue">"Climate 5000"</span>,
+                                <span class="red">"ATTR_L_IN_UNIT_TYPE"</span>: <span class="blue">"Настенный"</span>,
+                                <span class="red">"ATTR_L_GOODGROUP"</span>: <span class="blue">"Бытовые сплит-системы"</span>,
+                                <span class="red">"ATTR_L_GOODTYPE"</span>: <span class="blue">"Внутренний блок"</span>,
+                                <span class="red">"ATTR_RUS_NAME_AX"</span>: <span class="blue">"Внутренний блок кондиционера"</span>
+                        },
+                        <span class="red">"PRICES:"</span>: {
+                                <span class="red">"BASE:"</span>: {
+                                        <span class="red">"XML_ID"</span>: <span class="blue">"BASE"</span>,
+                                        <span class="red">"NAME"</span>: <span class="blue">"Розничная цена"</span>,
+                                        <span class="red">"PRICE"</span>: <span class="blue">"8530.72"</span>,
+                                        <span class="red">"CURRENCY"</span>: <span class="blue">"RUR"</span>
+                                },
+                                <span class="red">"mprc:"</span>: {
+                                        <span class="red">"XML_ID"</span>: <span class="blue">"BASE"</span>,
+                                        <span class="red">"NAME"</span>: <span class="blue">"МПРЦ"</span>,
+                                        <span class="red">"PRICE"</span>: <span class="blue">"12800.00"</span>,
+                                        <span class="red">"CURRENCY"</span>: <span class="blue">"RUR"</span>
+                                }
+                        },
+                        <span class="red">"STORE:"</span>: {
+                                <span class="red">"NAME"</span>: <span class="blue">"Москва"</span>,
+                                <span class="red">"XML_ID"</span>: <span class="blue">"d56a04ef-8afd-11eb-804d-00155db05a13"</span>,
+                                <span class="red">"STORE_AMOUNT"</span>: <span class="green">28</span>,
+                                <span class="red">"DELIVERY_AMOUNT"</span>: <span class="green">50</span>,
+                                <span class="red">"STORE_PARAMS_INFO"</span>: {
+                                        <span class="red">"LIMIT"</span>: <span class="green">50</span>,
+                                        <span class="red">"HIDE_MORE_LIMIT"</span>: false
+                                },
+                                <span class="red">"DELIVERY_PARAMS_INFO"</span>: {
+                                        <span class="red">"LIMIT"</span>: <span class="green">50</span>,
+                                        <span class="red">"HIDE_MORE_LIMIT"</span>: true
+                                }
+                        }
+                },
+                ...</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="api-page__block">
+              <h2>Получение информации об остатках товара на складе (файловый вариант)</h2>
+              <div class="api-page__part">
+                <p class="api-page__note">
+                  Получение основной информации о товарах на выбранном складе в виде файла в формате Excel. В отличии
+                  от метода /products/get, возвращающего данные на момент запроса, метод /files/get возвращает заранее
+                  сформированный файл. Дата обновления данных указана в файле в соответствующей ячейке
+                </p>
+                <div class="api-page__code">
+                  Method: GET<br />
+                  Path: /files/get
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Входные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Положение</th>
+                      <th>Тип</th>
+                      <th>Обязательный</th>
+                      <th>Описание</th>
+                    </tr>
+                    <tr>
+                      <td>version</td>
+                      <td>Path</td>
+                      <td>Enum</td>
+                      <td>Да</td>
+                      <td>Версия API</td>
+                    </tr>
+                    <tr>
+                      <td>access-token</td>
+                      <td>Path</td>
+                      <td>String</td>
+                      <td>Да</td>
+                      <td>Авторизационный ключ (идентификатор партнёра)</td>
+                    </tr>
+                    <tr>
+                      <td>store-id</td>
+                      <td>Path</td>
+                      <td>GUID</td>
+                      <td>Да</td>
+                      <td>Идентификатор склада (или значение default для склада по-умолчанию)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Выходные параметры</h3>
+                <div class="api-page__table-block">
+                  <table>
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <tr>
+                      <th>Параметр</th>
+                      <th>Тип</th>
+                      <th>Описание</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>File</td>
+                      <td>Excel-файл (формат xlsx)</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div class="api-page__part">
+                <h3>Пример запроса</h3>
+                <div class="api-page__code">
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13">
+                    <span
+                      >https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13</span
+                    >
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                  <a
+                    class="api-page__code-link"
+                    href="https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=default">
+                    <span>https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=default</span>
+                    <span class="api-page__code-link-icon"></span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="api-page__common">
-            <h1>Общие входные параметры</h1>
-            <div class="api-page__code">
-              GET https://api.daichi.ru/b2b/<версия>/<метод>?<параметры>
-            </div>
-            <div class="api-page__table-block">
-              <table>
-                <colgroup>
-                  <col>
-                  <col>
-                  <col>
-                  <col>
-                  <col>
-                </colgroup>
-                <tr>
-                  <th>Параметр</th>
-                  <th>Положение</th>
-                  <th>Тип</th>
-                  <th>Обязательный</th>
-                  <th>Описание</th>
-                </tr>
-                <tr>
-                  <td>version</td>
-                  <td>Path</td>
-                  <td>Enum</td>
-                  <td>Да</td>
-                  <td>Версия API</td>
-                </tr>
-                <tr>
-                  <td>access-token</td>
-                  <td>Path</td>
-                  <td>String</td>
-                  <td>Да</td>
-                  <td>Авторизационный ключ (идентификатор партнёра)</td>
-                </tr>
-              </table>
-            </div>
-          </div>
           <!-- <h1>Бытовые кондиционеры / Комплекты</h1>
           <div class="catalog-section-nav">
             <a
@@ -1327,1674 +1975,6 @@
               <li><a href="/catalog/konditsionirovanie/mobilnye_konditsionery/">Мобильные кондиционеры</a></li>
             </ul>
           </div> -->
-
-          <div class="is--hidden" id="catalog_komplekty"></div>
-
-          <div class="catalog-section js-catalog-section">
-            <aside class="catalog-section__aside">
-              <div class="wrap-filter">
-                <div class="filter-mobile-header">
-                  <div class="filter-mobile-header__title">Фильтры</div>
-                  <div class="filter-mobile-header__close">
-                    <a class="filter-mobile-header__link js--filter-mobile-close" href="#">
-                      <svg class="ico-svg">
-                        <use xlink:href="#ico-close"></use></svg
-                    ></a>
-                  </div>
-                </div>
-                <form
-                  class="filter"
-                  id="frmCatalogFilters"
-                  name="_form"
-                  action="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/"
-                  method="get">
-                  <div id="6622" class="js-filter-brend filter-brend filter-section is-open filter-section_open">
-                    <input type="hidden" class="js-open-for" name="open-for-brend" value="Y" />
-
-                    <a class="filter-section__title" href="javascript:void(0)">Бренд</a>
-
-                    <div class="filter-section-toggle">
-                      <div class="filter-section__body" id="filter-section_6622">
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="1"
-                              name="brend-1"
-                              id="brend-1"
-                              onclick="smartFilter.click(this)" /><span
-                              >Daikin <span class="filter-section__count" data-role="count_brend-1">73 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="11"
-                              name="brend-11"
-                              id="brend-11"
-                              onclick="smartFilter.click(this)" /><span
-                              >Daichi <span class="filter-section__count" data-role="count_brend-11">42 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="2"
-                              name="brend-2"
-                              id="brend-2"
-                              onclick="smartFilter.click(this)" /><span
-                              >Midea <span class="filter-section__count" data-role="count_brend-2">22 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="3"
-                              name="brend-3"
-                              id="brend-3"
-                              onclick="smartFilter.click(this)" /><span
-                              >Kentatsu <span class="filter-section__count" data-role="count_brend-3">66 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="5"
-                              name="brend-5"
-                              id="brend-5"
-                              onclick="smartFilter.click(this)" /><span
-                              >Axioma <span class="filter-section__count" data-role="count_brend-5">19 </span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    id="CATALOG_PRICE"
-                    class="js-filter-CATALOG_PRICE filter-CATALOG_PRICE filter-section is-open filter-section_open">
-                    <input type="hidden" class="js-open-for" name="open-for-CATALOG_PRICE" value="Y" />
-
-                    <a class="filter-section__title" href="javascript:void(0)">Цена</a>
-
-                    <div class="filter-section-toggle">
-                      <div class="filter-section-toggle">
-                        <div class="filter-section__body" id="filter-section_CATALOG_PRICE">
-                          <div class="wrap-filter-range">
-                            <div class="filter-range">
-                              <div class="filter-range-inputs">
-                                <div class="filter-range-inputs__col">
-                                  <div class="filter-range-inputs__title">от</div>
-                                  <div class="wrap-filter-range-input">
-                                    <input
-                                      class="filter-range-input range-field modfrom"
-                                      data-min="15700"
-                                      type="number"
-                                      name="CATALOG_PRICE_MIN"
-                                      id="CATALOG_PRICE_MIN"
-                                      value="15700"
-                                      data-default-value="15700"
-                                      onkeyup="smartFilter.keyup(this)"
-                                      onfocus="smartFilter.focus(this)"
-                                      onblur="smartFilter.blur(this)" />
-                                  </div>
-                                </div>
-                                <div class="filter-range-inputs__col">
-                                  <div class="filter-range-inputs__title">до</div>
-                                  <div class="wrap-filter-range-input">
-                                    <input
-                                      class="filter-range-input range-field modto"
-                                      data-max="357000"
-                                      type="number"
-                                      name="CATALOG_PRICE_MAX"
-                                      id="CATALOG_PRICE_MAX"
-                                      value="357000"
-                                      data-default-value="357000"
-                                      onkeyup="smartFilter.keyup(this)"
-                                      onfocus="smartFilter.focus(this)"
-                                      onblur="smartFilter.blur(this)" />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="6668" class="js-filter-seriya filter-seriya filter-section is-open filter-section_open">
-                    <input type="hidden" class="js-open-for" name="open-for-seriya" value="Y" />
-
-                    <a class="filter-section__title" href="javascript:void(0)">Серия</a>
-
-                    <div class="filter-section-toggle">
-                      <div class="filter-section__body" id="filter-section_6668">
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Bravo"
-                              name="seriya-bravo"
-                              id="seriya-bravo"
-                              onclick="smartFilter.click(this)" /><span
-                              >Bravo <span class="filter-section__count" data-role="count_seriya-bravo">10 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Carbon"
-                              name="seriya-carbon"
-                              id="seriya-carbon"
-                              onclick="smartFilter.click(this)" /><span
-                              >Carbon <span class="filter-section__count" data-role="count_seriya-carbon">6 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Emura (R32)"
-                              name="seriya-emura_r32"
-                              id="seriya-emura_r32"
-                              onclick="smartFilter.click(this)" /><span
-                              >Emura (R32)
-                              <span class="filter-section__count" data-role="count_seriya-emura_r32">7 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Emura (R410A)"
-                              name="seriya-emura_r410a"
-                              id="seriya-emura_r410a"
-                              onclick="smartFilter.click(this)" /><span
-                              >Emura (R410A)
-                              <span class="filter-section__count" data-role="count_seriya-emura_r410a">7 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Everest"
-                              name="seriya-everest"
-                              id="seriya-everest"
-                              onclick="smartFilter.click(this)" /><span
-                              >Everest <span class="filter-section__count" data-role="count_seriya-everest">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FDXM-F9 (R32)"
-                              name="seriya-fdxm_f9_r32"
-                              id="seriya-fdxm_f9_r32"
-                              onclick="smartFilter.click(this)" /><span
-                              >FDXM-F9 (R32)
-                              <span class="filter-section__count" data-role="count_seriya-fdxm_f9_r32">10 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FDXM-F9/RZAG"
-                              name="seriya-fdxm_f9_rzag"
-                              id="seriya-fdxm_f9_rzag"
-                              onclick="smartFilter.click(this)" /><span
-                              >FDXM-F9/RZAG
-                              <span class="filter-section__count" data-role="count_seriya-fdxm_f9_rzag">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FTXF"
-                              name="seriya-ftxf"
-                              id="seriya-ftxf"
-                              onclick="smartFilter.click(this)" /><span
-                              >FTXF <span class="filter-section__count" data-role="count_seriya-ftxf">18 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FTXM"
-                              name="seriya-ftxm"
-                              id="seriya-ftxm"
-                              onclick="smartFilter.click(this)" /><span
-                              >FTXM <span class="filter-section__count" data-role="count_seriya-ftxm">10 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FTXM/RZAG"
-                              name="seriya-ftxm_rzag"
-                              id="seriya-ftxm_rzag"
-                              onclick="smartFilter.click(this)" /><span
-                              >FTXM/RZAG
-                              <span class="filter-section__count" data-role="count_seriya-ftxm_rzag">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FTXP"
-                              name="seriya-ftxp"
-                              id="seriya-ftxp"
-                              onclick="smartFilter.click(this)" /><span
-                              >FTXP <span class="filter-section__count" data-role="count_seriya-ftxp">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="FTYN"
-                              name="seriya-ftyn"
-                              id="seriya-ftyn"
-                              onclick="smartFilter.click(this)" /><span
-                              >FTYN <span class="filter-section__count" data-role="count_seriya-ftyn">9 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Mark II"
-                              name="seriya-mark_ii"
-                              id="seriya-mark_ii"
-                              onclick="smartFilter.click(this)" /><span
-                              >Mark II <span class="filter-section__count" data-role="count_seriya-mark_ii">1 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Naomi"
-                              name="seriya-naomi"
-                              id="seriya-naomi"
-                              onclick="smartFilter.click(this)" /><span
-                              >Naomi <span class="filter-section__count" data-role="count_seriya-naomi">1 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Peak"
-                              name="seriya-peak"
-                              id="seriya-peak"
-                              onclick="smartFilter.click(this)" /><span
-                              >Peak <span class="filter-section__count" data-role="count_seriya-peak">10 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Quantum"
-                              name="seriya-quantum"
-                              id="seriya-quantum"
-                              onclick="smartFilter.click(this)" /><span
-                              >Quantum <span class="filter-section__count" data-role="count_seriya-quantum">5 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Quantum+"
-                              name="seriya-quantum_2B"
-                              id="seriya-quantum_2B"
-                              onclick="smartFilter.click(this)" /><span
-                              >Quantum+
-                              <span class="filter-section__count" data-role="count_seriya-quantum_2B">2 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Rio"
-                              name="seriya-rio"
-                              id="seriya-rio"
-                              onclick="smartFilter.click(this)" /><span
-                              >Rio <span class="filter-section__count" data-role="count_seriya-rio">1 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Rio ERP"
-                              name="seriya-rio_erp"
-                              id="seriya-rio_erp"
-                              onclick="smartFilter.click(this)" /><span
-                              >Rio ERP <span class="filter-section__count" data-role="count_seriya-rio_erp">4 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Team"
-                              name="seriya-team"
-                              id="seriya-team"
-                              onclick="smartFilter.click(this)" /><span
-                              >Team <span class="filter-section__count" data-role="count_seriya-team">1 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Titan Genesis"
-                              name="seriya-titan_genesis"
-                              id="seriya-titan_genesis"
-                              onclick="smartFilter.click(this)" /><span
-                              >Titan Genesis
-                              <span class="filter-section__count" data-role="count_seriya-titan_genesis">6 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Turin"
-                              name="seriya-turin"
-                              id="seriya-turin"
-                              onclick="smartFilter.click(this)" /><span
-                              >Turin <span class="filter-section__count" data-role="count_seriya-turin">5 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Verona"
-                              name="seriya-verona"
-                              id="seriya-verona"
-                              onclick="smartFilter.click(this)" /><span
-                              >Verona <span class="filter-section__count" data-role="count_seriya-verona">10 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="X-treme Peak"
-                              name="seriya-x_treme_peak"
-                              id="seriya-x_treme_peak"
-                              onclick="smartFilter.click(this)" /><span
-                              >X-treme Peak
-                              <span class="filter-section__count" data-role="count_seriya-x_treme_peak">4 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Серия A"
-                              name="seriya-seriya_a"
-                              id="seriya-seriya_a"
-                              onclick="smartFilter.click(this)" /><span
-                              >Серия A <span class="filter-section__count" data-role="count_seriya-seriya_a">1 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Серия B"
-                              name="seriya-seriya_b"
-                              id="seriya-seriya_b"
-                              onclick="smartFilter.click(this)" /><span
-                              >Серия B <span class="filter-section__count" data-role="count_seriya-seriya_b">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="Серия E"
-                              name="seriya-seriya_e"
-                              id="seriya-seriya_e"
-                              onclick="smartFilter.click(this)" /><span
-                              >Серия E <span class="filter-section__count" data-role="count_seriya-seriya_e">3 </span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="7287" class="js-filter-mozhno_spisat_bally filter-mozhno_spisat_bally filter-section">
-                    <input type="hidden" class="js-open-for" name="open-for-mozhno_spisat_bally" value="N" />
-
-                    <a class="filter-section__title" href="javascript:void(0)">Можно списать баллы</a>
-
-                    <div class="filter-section-toggle">
-                      <div class="filter-section__body" id="filter-section_7287">
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="1"
-                              name="mozhno_spisat_bally-1"
-                              id="mozhno_spisat_bally-1"
-                              onclick="smartFilter.click(this)" /><span
-                              >Да <span class="filter-section__count" data-role="count_mozhno_spisat_bally-1"> 2 </span>
-                            </span>
-                          </label>
-                        </div>
-                        <div class="field">
-                          <label class="field-input-radio">
-                            <input
-                              type="checkbox"
-                              value="0"
-                              name="mozhno_spisat_bally-0"
-                              id="mozhno_spisat_bally-0"
-                              onclick="smartFilter.click(this)" /><span
-                              >Нет
-                              <span class="filter-section__count" data-role="count_mozhno_spisat_bally-0"> 242 </span>
-                            </span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="filter-footer">
-                    <a
-                      class="btn btn_small filter-footer__apply apply-mob-filter filters-trigger"
-                      onclick="smartFilter.click(this)"
-                      >Показать
-                    </a>
-                    <a
-                      class="btn btn_small btn_border btn_border-blue filter-footer__reset filters-trigger js-reset-all"
-                      id="js-reset-all"
-                      onclick="smartFilter.resetAll(this);"
-                      >Сбросить все</a
-                    >
-                  </div>
-                </form>
-              </div>
-            </aside>
-
-            <section class="catalog-section__main js-page-catalog__content">
-              <div class="wrap-filter-selected" style="display: none">
-                <div class="filter-selected">
-                  <div class="filter-selected__body"></div>
-                </div>
-              </div>
-
-              <div class="pager-toolbar">
-                <div class="pager-toolbar__col pager-toolbar__col_left">
-                  <div class="pager-toolbar-mobile-filter">
-                    <ul class="catalog-toolbar-view">
-                      <li class="">
-                        <a
-                          class="catalog-toolbar-view__link"
-                          href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=table">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-view-table"></use>
-                          </svg>
-                        </a>
-                      </li>
-                      <li class="">
-                        <a
-                          class="catalog-toolbar-view__link"
-                          href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=series">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-view-group"></use>
-                          </svg>
-                        </a>
-                      </li>
-                      <li class="catalog-toolbar-view_act">
-                        <a
-                          class="catalog-toolbar-view__link"
-                          href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=list">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-view-grid"></use>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                    <a class="pager-toolbar-mobile-filter__link js--mobile-filter-open" href="javascript:void(0)"
-                      >Фильтр
-                    </a>
-                  </div>
-                  <span class="pager-toolbar-sort" data-dropdown-menu>
-                    <span class="pager-toolbar-sort__title">Сортировать</span>
-
-                    <a
-                      class="pager-toolbar-sort__link js--pager-sort-dropdown has--arrow"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?sort=default&order=desc"
-                      data-dropdown-link>
-                      по умолчанию
-                    </a>
-
-                    <div class="pager-sort-dropdown" data-dropdown>
-                      <ul class="pager-sort-dropdown-list">
-                        <li class="pager-sort-list_act">
-                          <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?sort=default&order=desc"
-                            >по умолчанию</a
-                          >
-                        </li>
-                        <li class="">
-                          <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?sort=price&order=asc"
-                            >по возрастанию цены</a
-                          >
-                        </li>
-                        <li class="">
-                          <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?sort=price&order=desc"
-                            >по убыванию цены</a
-                          >
-                        </li>
-                        <li class="">
-                          <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?sort=new&order=desc"
-                            >по новизне</a
-                          >
-                        </li>
-                      </ul>
-                    </div>
-                  </span>
-                </div>
-                <div class="pager-toolbar__col">
-                  <ul class="catalog-toolbar-view">
-                    <li class="">
-                      <a
-                        class="catalog-toolbar-view__link"
-                        href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=table">
-                        <svg class="ico-svg">
-                          <use xlink:href="#ico-view-table"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li class="">
-                      <a
-                        class="catalog-toolbar-view__link"
-                        href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=series">
-                        <svg class="ico-svg">
-                          <use xlink:href="#ico-view-group"></use>
-                        </svg>
-                      </a>
-                    </li>
-                    <li class="catalog-toolbar-view_act">
-                      <a
-                        class="catalog-toolbar-view__link"
-                        href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?view=list">
-                        <svg class="ico-svg">
-                          <use xlink:href="#ico-view-grid"></use>
-                        </svg>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="catalog-grid" id="js-catalog-list">
-                <div class="catalog-grid__col" data-element-id="16227" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16227" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ26HFAN1_KSRQ26HFAN1/"
-                      class="catalog-grid-item__img">
-                      <img
-                        src="https://demo.daichi.business/upload/resize_cache/iblock/21b/640_440_1/21bd8d00367dda5822343a3343c4e724.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ26HFAN1_KSRQ26HFAN1/">
-                        <br />KSGQ26HFAN1/KSRQ26HFAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        25м<sup>2</sup>
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--cooling"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,3 кВт
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--heating"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,5 кВт
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">24 800 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 24 550,24 ₽ </span>
-                        </div>
-                        <div
-                          class="amount points amount_open"
-                          data-available-qnt="23"
-                          data-product-id="16227"
-                          data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="8" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="16465" data-score="">
-                  <div class="catalog-grid-item is--not-available">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16465" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGU26HZAN1_KSRU26HZAN1/"
-                      class="catalog-grid-item__img">
-                      <img
-                        src="https://demo.daichi.business/upload/resize_cache/iblock/21b/640_440_1/21bd8d00367dda5822343a3343c4e724.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGU26HZAN1_KSRU26HZAN1/">
-                        Kentatsu&nbsp;Turin<br />KSGU26HZAN1/KSRU26HZAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        25м<sup>2</sup>
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--cooling"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,3 кВт
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--heating"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,5 кВт
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">36 600 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 26 178,24 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="20" data-product-id="16465" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15701" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__sale">
-                      <div class="product-sale product-sale_green"><span class="product-sale__text">Friday</span></div>
-                    </div>
-
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15701" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGX35HFAN1_GL_KSRX35HFAN1/"
-                      class="catalog-grid-item__img">
-                      <img
-                        src="https://demo.daichi.business/upload/resize_cache/iblock/21b/640_440_1/21bd8d00367dda5822343a3343c4e724.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGX35HFAN1_GL_KSRX35HFAN1/">
-                        <br />KSGX35HFAN1-GL/KSRX35HFAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        25м<sup>2</sup>
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--cooling"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,3 кВт
-                      </span>
-                      <span
-                        class="catalog-item-props catalog-item-props--heating"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        2,5 кВт
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">43 100 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 28 999 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="20" data-product-id="15701" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col catalog-grid__col_wide">
-                  <div class="catalog-grid-incut">
-                    <a href="/">
-                      <picture>
-                        <source media="(max-width: 687px)" srcset="/upload/rk/136/test-2.jpg" />
-                        <img src="/upload/rk/495/test.jpg" alt="" />
-                      </picture>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="16228" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16228" class="add-favorites-link is--active js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ35HFAN1_KSRQ35HFAN1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/21b/640_440_1/21bd8d00367dda5822343a3343c4e724.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ35HFAN1_KSRQ35HFAN1/">
-                        Kentatsu&nbsp;Quantum<br />KSGQ35HFAN1/KSRQ35HFAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">32 000 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 31 778,56 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="384" data-product-id="16228" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15670" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__sale">
-                      <div class="product-sale product-sale_green"><span class="product-sale__text">New</span></div>
-                    </div>
-
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15670" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ASX07AZ1_ASB07AZ1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/fe0/640_440_1/fe00b8ba7e5df74ff499fcc5202130ad.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ASX07AZ1_ASB07AZ1/">
-                        <br />ASX07AZ1/ASB07AZ1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">26 900 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 23 117,60 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="47" data-product-id="15670" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="16000" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16000" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25EVQ1_DF25EV1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/07f/640_440_1/07fa6d9297623d2528da46a40bcba0d1.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25EVQ1_DF25EV1/">
-                        <br />DA25EVQ1/DF25EV1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">19 999 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 18 949,92 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="12" data-product-id="16000" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="16487" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16487" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ICE20AVQ1_ICE20FV1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/547/640_440_1/5471bab09747edc7478f7998f7f3b7b5.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ICE20AVQ1_ICE20FV1/">
-                        <br />ICE20AVQ1/ICE20FV1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">25 400 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 25 917,76 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="38" data-product-id="16487" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15648" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item-chip-block">
-                      <!-- Бэйдж D баллов -->
-                      <div class="catalog-grid-item-chip">
-                        <div class="d-points-chip main">
-                          <span class="logo">
-                            <svg>
-                              <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
-                            </svg>
-                          </span>
-                          <span class="value"> +1100 </span>
-                        </div>
-                      </div>
-                      <!-- Тултип D баллы -->
-                      <div class="tooltip">
-                        <span class="tooltip__title">+ 1100 °D баллов</span>
-                        <p class="tooltip__desc">Получите °D-баллы за покупку инверторной сплит-системы</p>
-                        <a href="/promotions/aktsiya-daichi-everest/" target="_blank" class="tooltip__link"
-                          >Подробнее об акции</a
-                        >
-                      </div>
-                    </div>
-
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15648" class="add-favorites-link is--active js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25AVQS1_W_DF25AVS1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/089/640_440_1/08915c3ea2da750f95c17f7808e3c159.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25AVQS1_W_DF25AVS1/">
-                        Daichi&nbsp;Peak<br />DA25AVQS1-W/DF25AVS1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">35 700 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 25 527,04 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="641" data-product-id="15648" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="16226" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="16226" class="add-favorites-link is--active js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ21HFAN1_KSRQ21HFAN1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/21b/640_440_1/21bd8d00367dda5822343a3343c4e724.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGQ21HFAN1_KSRQ21HFAN1/">
-                        Kentatsu&nbsp;Quantum<br />KSGQ21HFAN1/KSRQ21HFAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">22 900 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 22 596,64 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="12" data-product-id="16226" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15653" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item-chip-block">
-                      <!-- Бэйдж D баллов -->
-                      <div class="catalog-grid-item-chip">
-                        <div class="d-points-chip main">
-                          <span class="logo">
-                            <svg>
-                              <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
-                            </svg>
-                          </span>
-                          <span class="value"> +2000 </span>
-                        </div>
-                      </div>
-                      <!-- Тултип D баллы -->
-                      <div class="tooltip">
-                        <span class="tooltip__title">+ 2000 °D баллов</span>
-                        <p class="tooltip__desc">Получите °D-баллы за покупку инверторной сплит-системы</p>
-                        <a href="/promotions/aktsiya-daichi-everest/" target="_blank" class="tooltip__link"
-                          >Подробнее об акции</a
-                        >
-                      </div>
-                    </div>
-
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15653" class="add-favorites-link is--active js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25AVQS1_S_DF25AVS1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/c5f/640_440_1/c5fdf07b386c2d9fd643dee12127405e.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/DA25AVQS1_S_DF25AVS1/">
-                        Daichi&nbsp;Peak<br />DA25AVQS1-S/DF25AVS1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендуемая розничная цена</div>
-                        <div class="price-pane-old__value">35 700 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 25 527,04 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="486" data-product-id="15653" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15691" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15691" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGX26HFAN1_GL_KSRX26HFAN1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/bef/640_440_1/bef5e29f01e4a398a470eb6df432b6a1.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/KSGX26HFAN1_GL_KSRX26HFAN1/">
-                        Kentatsu&nbsp;Titan Genesis<br />KSGX26HFAN1-GL/KSRX26HFAN1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="catalog-grid-item-footer__noaval">
-                          <a href="javascript:void(0);" class="js-price-not-defined">
-                            Уточните цену у вашего менеджера</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="catalog-grid__col" data-element-id="15887" data-score="">
-                  <div class="catalog-grid-item">
-                    <div class="catalog-grid-item__favorites">
-                      <a data-element-id="15887" class="add-favorites-link js-add-favorites" href="#"
-                        ><span class="ico-favorites">
-                          <svg class="ico-svg">
-                            <use xlink:href="#ico-favorites"></use></svg></span
-                      ></a>
-                    </div>
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ASX12B1_ASB12B1/"
-                      class="catalog-grid-item__img">
-                      <img src="/upload/resize_cache/iblock/575/640_440_1/575b7993f795637578a088f6ce418cd6.jpg" />
-                    </a>
-                    <div class="catalog-grid-item__title">
-                      <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/ASX12B1_ASB12B1/">
-                        Axioma&nbsp;Серия B<br />ASX12B1/ASB12B1
-                      </a>
-                    </div>
-                    <div class="catalog-grid-item__props">
-                      <span
-                        class="catalog-item-props"
-                        data-tooltip=""
-                        data-position="bottom-start"
-                        data-class="popper-tooltip_catalog">
-                        R410A
-                      </span>
-                    </div>
-                    <div class="catalog-grid-item-footer">
-                      <!--.catalog-grid-item__art-->
-                      <!--        +product-art()-->
-                      <div class="price-pane-old">
-                        <div class="price-pane-old__title">Рекомендованная розничная цена</div>
-                        <div class="price-pane-old__value">21 800 ₽</div>
-                      </div>
-
-                      <div class="catalog-grid-item-footer__bottom">
-                        <div class="price-pane">
-                          <span class="price-pane__current"> 19 470,88 ₽ </span>
-                        </div>
-                        <div class="amount points" data-available-qnt="79" data-product-id="15887" data-qnt-selector>
-                          <div class="amount__body">
-                            <button
-                              class="amount-btn amount-btn_reduce js-amount-btn_reduce js-amount-btn"
-                              data-type="reduce"
-                              type="button">
-                              ‐
-                            </button>
-                            <span class="wrap-amount-input">
-                              <input class="amount-input js-amount-input" type="text" value="0" readonly />
-                            </span>
-                            <button
-                              class="amount-btn amount-btn_increase js-amount-btn_increase js-amount-btn"
-                              data-type="increase"
-                              type="button">
-                              +
-                            </button>
-                          </div>
-
-                          <div class="amount__btn js-amount-init-btn">
-                            <button class="amount-buy-btn js-amount-buy-btn">
-                              <span class="ico-amount-cart">
-                                <svg class="ico-svg">
-                                  <use xlink:href="#ico-cart"></use>
-                                </svg>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a
-                class="pagination-load-more"
-                id="js-pagination-load-more-catalog-section"
-                onclick="return (new CShowMore()).processShowMore($(this), 'catalog-section');"
-                href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=2">
-                Показать еще&nbsp;12 товаров
-              </a>
-
-              <div class="wrap-pagination" id="js-catalog-wrap-pagination-catalog-section">
-                <ul class="pagination">
-                  <li class="pagination-item-prev">
-                    <a class="pagination-item-prev__link is--disable" href="javascript:void(0)">
-                      <span class="ico-pagination-prev">
-                        <svg class="ico-svg">
-                          <use xlink:href="#ico-arrow-small"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </li>
-
-                  <li class="pagination-item pagination-item_act">
-                    <span> 1 </span>
-                  </li>
-
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-item__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=2">
-                      2
-                    </a>
-                  </li>
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-item__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=3">
-                      3
-                    </a>
-                  </li>
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-item__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=4">
-                      4
-                    </a>
-                  </li>
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-item__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=5">
-                      5
-                    </a>
-                  </li>
-                  <li class="pagination-item pagination-item_devider"><span> ...</span></li>
-                  <li class="pagination-item">
-                    <a
-                      class="pagination-item__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=21">
-                      21
-                    </a>
-                  </li>
-                  <li class="pagination-item-next">
-                    <a
-                      class="pagination-item-next__link"
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?PAGEN_5=2">
-                      <span class="ico-pagination-next">
-                        <svg class="ico-svg">
-                          <use xlink:href="#ico-arrow-small"></use>
-                        </svg>
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </div>
         </section>
       </div>
 
