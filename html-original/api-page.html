@@ -1223,150 +1223,74 @@
             itemprop="http://schema.org/breadcrumb"
             itemscope
             itemtype="http://schema.org/BreadcrumbList">
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Главная</a></li>
+            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Личный кабинет</a></li>
             <li
               class="breadcrumbs__item"
               id="bx_breadcrumb_0"
               itemprop="itemListElement"
               itemscope
               itemtype="http://schema.org/ListItem">
-              <a class="breadcrumbs__link" href="/catalog/" title="Каталог" itemprop="item">
-                <span itemprop="name">Каталог</span>
+              <a class="breadcrumbs__link" href="/catalog/" title="API" itemprop="item">
+                <span itemprop="name">API</span>
               </a>
               <meta itemprop="position" content="1" />
-            </li>
-            <li
-              class="breadcrumbs__item"
-              id="bx_breadcrumb_1"
-              itemprop="itemListElement"
-              itemscope
-              itemtype="http://schema.org/ListItem">
-              <a
-                class="breadcrumbs__link"
-                href="/catalog/konditsionirovanie/"
-                title="Кондиционирование"
-                itemprop="item">
-                <span itemprop="name">Кондиционирование</span>
-              </a>
-              <meta itemprop="position" content="2" />
-            </li>
-            <li
-              class="breadcrumbs__item"
-              id="bx_breadcrumb_2"
-              itemprop="itemListElement"
-              itemscope
-              itemtype="http://schema.org/ListItem">
-              <a
-                class="breadcrumbs__link js--open-tooltip"
-                data-tooltip-id="catalog_bytovye_konditsionery"
-                href="/catalog/konditsionirovanie/bytovye_konditsionery/"
-                title="Бытовые кондиционеры"
-                itemprop="item">
-                <span itemprop="name">Бытовые кондиционеры</span>
-              </a>
-              <meta itemprop="position" content="3" />
-            </li>
-            <li class="breadcrumbs__item">
-              <span class="breadcrumbs__plain js--open-tooltip" data-tooltip-id="catalog_komplekty">Комплекты</span>
             </li>
           </ul>
           <div class="breadcrumbs-mobile">
             <a class="breadcrumbs-mobile__link" href="/catalog/konditsionirovanie/bytovye_konditsionery/">&lt; Назад</a>
           </div>
-          <!-- <div class="breadcrumbs-slot">
-            <span class="dropdown-menu" data-dropdown-menu="" data-position="bottom-end">
-              <form enctype="multipart/form-data" method="post" id="js-stores">
-                <input type="hidden" name="CURRENT_STORE" />
-                <input type="hidden" name="sessid" id="sessid" value="032834754bcec722346922338446b0ca" />
-
-                <span class="dropdown-menu__title">Доступность на складе: </span>
-
-                <a class="dropdown-menu__link has--arrow" href="#" data-dropdown-link>Волгоград</a>
-
-                <div class="dropdown-menu-dropdown" data-dropdown="">
-                  <ul class="dropdown-menu-list">
-                    <li class="dropdown-menu-list-item_act">
-                      <a href="javascript:void(0);" class="js-store-change" data-store="171"> Новосибирск </a>
-                    </li>
-
-                    <li class="dropdown-menu-list-item_act">
-                      <a href="javascript:void(0);" class="js-store-change" data-store="197"> Москва Общий </a>
-                    </li>
-
-                    <li class="dropdown-menu-list-item_act">
-                      <a href="javascript:void(0);" class="js-store-change" data-store="157"> Тольятти </a>
-                    </li>
-
-                    <li class="dropdown-menu-list-item_act">
-                      <a href="javascript:void(0);" class="js-store-change" data-store="199"> Красноярск </a>
-                    </li>
-
-                    <li class="dropdown-menu-list-item_act">
-                      <a href="javascript:void(0);" class="js-store-change" data-store="165"> Красноярск 1 </a>
-                    </li>
-                  </ul>
-                </div>
-              </form>
-            </span>
-          </div> -->
-          <div class="breadcrumbs-stock">
-            <div class="breadcrumbs-stock__inner">
-              <span class="dropdown-menu" data-dropdown-menu="" data-position="bottom-end">
-                <form enctype="multipart/form-data" method="post" id="js-stores">
-                  <input type="hidden" name="CURRENT_STORE" />
-                  <input type="hidden" name="sessid" id="sessid" value="032834754bcec722346922338446b0ca" />
-
-                  <span class="dropdown-menu__title">Доступность на складе</span>
-
-                  <a class="dropdown-menu__link has--arrow" href="#" data-dropdown-link>Волгоград</a>
-
-                  <div class="dropdown-menu-dropdown" data-dropdown="">
-                    <ul class="dropdown-menu-list">
-                      <li class="dropdown-menu-list-item_act">
-                        <a href="javascript:void(0);" class="js-store-change" data-store="171"> Новосибирск </a>
-                      </li>
-
-                      <li class="dropdown-menu-list-item_act">
-                        <a href="javascript:void(0);" class="js-store-change" data-store="197"> Москва Общий </a>
-                      </li>
-
-                      <li class="dropdown-menu-list-item_act">
-                        <a href="javascript:void(0);" class="js-store-change" data-store="157"> Тольятти </a>
-                      </li>
-
-                      <li class="dropdown-menu-list-item_act">
-                        <a href="javascript:void(0);" class="js-store-change" data-store="199"> Красноярск </a>
-                      </li>
-
-                      <li class="dropdown-menu-list-item_act">
-                        <a href="javascript:void(0);" class="js-store-change" data-store="165"> Красноярск 1 </a>
-                      </li>
-                    </ul>
-                  </div>
-                </form>
-              </span>
-              <div class="breadcrumbs-stock__download">
-                <button class="breadcrumbs-stock__button disabled"></button>
-                <div class="breadcrumbs-stock__download-tooltip">
-                  <div class="breadcrumbs-stock__download-tooltip-inner">
-                    <div class="breadcrumbs-stock__download-tooltip-content">
-                      <p class="breadcrumbs-stock__download-title">Скачать файл «Остатки товара»</p>
-                      <p class="breadcrumbs-stock__download-text">
-                        Отчёт по остаткам товара на выбранном складе
-                      </p>
-                      <p class="breadcrumbs-stock__download-text">
-                        Ссылка будет доступна только после получения ключа API
-                      </p>
-                      <a href="#" class="breadcrumbs-stock__download-about-link">Подробнее</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         <section class="section-main">
-          <h1>Бытовые кондиционеры / Комплекты</h1>
+          <div class="api-page__promo">
+            <div class="api-page__promo-content">
+              <h1 class="api-page__promo-title">Подключайте API Daichi Бизнес!</h1>
+              <p class="api-page__promo-desc">
+                API позволяет интегрировать ваши онлайн-магазины и&nbsp;учётные системы с&nbsp;базами данных Daichi Бизнес.<br/>
+                Вы&nbsp;будете получать актуальную информацию по&nbsp;товарам и&nbsp;их&nbsp;остаткам онлайн.
+              </p>
+              <button class="api-page__promo-btn btn">Получить ключ API</button>
+            </div>
+          </div>
+
+          <div class="api-page__common">
+            <h1>Общие входные параметры</h1>
+            <div class="api-page__code">
+              GET https://api.daichi.ru/b2b/<версия>/<метод>?<параметры>
+            </div>
+            <div class="api-page__table-block">
+              <table>
+                <colgroup>
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                  <col>
+                </colgroup>
+                <tr>
+                  <th>Параметр</th>
+                  <th>Положение</th>
+                  <th>Тип</th>
+                  <th>Обязательный</th>
+                  <th>Описание</th>
+                </tr>
+                <tr>
+                  <td>version</td>
+                  <td>Path</td>
+                  <td>Enum</td>
+                  <td>Да</td>
+                  <td>Версия API</td>
+                </tr>
+                <tr>
+                  <td>access-token</td>
+                  <td>Path</td>
+                  <td>String</td>
+                  <td>Да</td>
+                  <td>Авторизационный ключ (идентификатор партнёра)</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- <h1>Бытовые кондиционеры / Комплекты</h1>
           <div class="catalog-section-nav">
             <a
               class="catalog-section-nav__link is--active"
@@ -1402,7 +1326,7 @@
               <li><a href="/catalog/konditsionirovanie/okonnye_konditsionery/">Оконные кондиционеры</a></li>
               <li><a href="/catalog/konditsionirovanie/mobilnye_konditsionery/">Мобильные кондиционеры</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="is--hidden" id="catalog_komplekty"></div>
 

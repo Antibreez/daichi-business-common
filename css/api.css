@@ -133,6 +133,92 @@
   line-height: 150%;
   color: #6C7684; }
 
+.api-page__promo {
+  padding: 48px;
+  background-color: #F4F4F8;
+  border-radius: 5px;
+  margin: 0 0 80px;
+  background-image: url("../img/api-promo.png");
+  background-size: 51% auto;
+  background-position: right bottom;
+  background-repeat: no-repeat; }
+
+.api-page__promo-content {
+  max-width: 49%; }
+
+.api-page__promo-title {
+  font-size: 48px;
+  line-height: 115%;
+  font-weight: 500;
+  margin: 0 0 16px; }
+
+.api-page__promo-desc {
+  font-size: 16px;
+  line-height: 150%;
+  color: #6C7684;
+  margin: 0 0 36px; }
+
+.api-page__promo-btn {
+  min-width: 261px; }
+
+.api-page__common {
+  margin: 0 0 48px; }
+  .api-page__common h1 {
+    margin: 0 0 32px; }
+  .api-page__common .api-page__code {
+    margin: 0 0 48px; }
+
+.api-page__code {
+  font-size: 16px;
+  line-height: 150%;
+  padding: 24px;
+  background-color: #F4F4F8; }
+
+.api-page__table-block {
+  overflow-x: auto;
+  width: calc(100% + 80px);
+  -webkit-transform: translateX(-40px);
+      -ms-transform: translateX(-40px);
+          transform: translateX(-40px);
+  padding: 0 40px; }
+  .api-page__table-block table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    min-width: 1296px; }
+    .api-page__table-block table col {
+      width: 17.3%; }
+      .api-page__table-block table col:first-child {
+        width: 18.8%; }
+      .api-page__table-block table col:nth-child(5) {
+        width: 29.3%; }
+    .api-page__table-block table td,
+    .api-page__table-block table th {
+      padding: 0;
+      padding-right: 24px;
+      text-align: left; }
+      .api-page__table-block table td:first-child,
+      .api-page__table-block table th:first-child {
+        padding-left: 20px; }
+      .api-page__table-block table td:nth-child(5),
+      .api-page__table-block table th:nth-child(5) {
+        padding-right: 20px; }
+    .api-page__table-block table th {
+      padding-bottom: 16px;
+      font-size: 12px;
+      line-height: 120%;
+      color: #6C7684; }
+    .api-page__table-block table td {
+      background-color: #F4F4F8;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .api-page__table-block table td:first-child {
+        border-radius: 5px 0 0 5px;
+        font-weight: 600; }
+      .api-page__table-block table td:last-child {
+        border-radius: 0 5px 5px 0; }
+
 @media only screen and (max-width: 1024px) {
   .wrap-breadcrumbs {
     margin-top: 80px; } }
