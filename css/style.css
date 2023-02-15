@@ -130,3 +130,9 @@ tr.is--not-available .catalog-series-table__link:hover {
   margin-bottom: 2px; }
   .price-pane-old__value.is--city {
     color: #6c7684; }
+
+.catalog-table .is--td {
+  height: 78px; }
+
+.catalog-table-slider-item_td {
+  height: 78px; }
