@@ -14,6 +14,7 @@ $(document).on("click", function (e) {
     $target.closest(".breadcrumbs-stock__download-tooltip").length === 0 &&
     $target.closest(".breadcrumbs-stock__button").length === 0
   ) {
+    console.log("lool");
     $(".breadcrumbs-stock__download-tooltip").removeClass("opened");
   }
 });
@@ -43,4 +44,34 @@ $(window).on("load", function () {
   };
 
   onApiKeyRequestSended();
+
+  $(document).on("click", ".api-page__promo-btn-received", async function (e) {
+    const $target = $(e.currentTarget);
+    const text = $target.find("span").eq(1).text();
+
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log("Content copied to clipboard");
+      $target.addClass("copied");
+      setTimeout(function () {
+        $target.removeClass("copied");
+      }, 1000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  });
+
+  const $notification = $(".api-page__notification");
+  const $notificationToggle = $notification.find(".api-page__notification-toggle-input");
+  const $timeBlock = $notification.find(".api-page__notification-time");
+
+  $(document).on("change", $notificationToggle, function (e) {
+    const $target = $(e.target);
+
+    if ($target.is(":checked")) {
+      $notification.addClass("opened");
+    } else {
+      $notification.removeClass("opened");
+    }
+  });
 });
