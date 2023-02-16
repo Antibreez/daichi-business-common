@@ -1250,11 +1250,51 @@
                   Бизнес.<br />
                   Вы&nbsp;будете получать актуальную информацию по&nbsp;товарам и&nbsp;их&nbsp;остаткам онлайн.
                 </p>
-                <a class="api-page__promo-btn btn">Получить ключ API</a>
+                <!-- <a class="api-page__promo-btn btn">Получить ключ API</a> -->
+                <button class="api-page__promo-btn-received">
+                  <div class="api-page__promo-btn-received-content">
+                    <span>Ваш ключ API</span>
+                    <span>a0b84b98cfd9f7a70d65d7d1049eb30b</span>
+                  </div>
+                </button>
               </div>
             </div>
 
             <div class="api-page__block">
+              <div class="api-page__notification">
+                <div class="api-page__notification-toggle">
+                  <span class="api-page__notification-toggle-text">
+                    Хочу получать информацию по остаткам на&nbsp;Email
+                  </span>
+                  <label class="api-page__notification-toggle-label">
+                    <input
+                      class="api-page__notification-toggle-input visually-hidden"
+                      type="checkbox"
+                      name="stock-notification" />
+                    <span class="api-page__notification-toggle-item"></span>
+                  </label>
+                </div>
+                <div class="api-page__notification-time">
+                  <div class="api-page__notification-time-inner">
+                    <span class="api-page__notification-time-text">
+                      Укажите время дня, в&nbsp;которое вы хотели бы получать письмо
+                    </span>
+                    <div class="api-page__notification-time-control">
+                      <div class="field-select2">
+                        <select name="stock-notification-time" class="field-input-select js-select-init">
+                          <option value="12:00">12:00</option>
+                          <option value="12:00">12:00</option>
+                          <option value="12:00">12:00</option>
+                          <option value="12:00">12:00</option>
+                          <option value="12:00">12:00</option>
+                        </select>
+                      </div>
+                      <div class="api-page__notification-time-btn btn">Сохранить</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <h2>Общие входные параметры</h2>
               <div class="api-page__part">
                 <div class="api-page__code no-break">
