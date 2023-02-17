@@ -308,7 +308,7 @@
 
     <meta name="yandex-verification" content="92ace6cf03bf36ab" />
     <meta name="google-site-verification" content="zydBzz8MpPQnKewu5XlZrbZjbUIuOiz2oU-kDh3XTHI" />
-    <link href="./css/style2.min.css" type="text/css" rel="stylesheet" />
+    <link href="./css/style.min.css" type="text/css" rel="stylesheet" />
     <link href="./css/alert.min.css" type="text/css" rel="stylesheet" />
     <link href="./css/api.min.css" type="text/css" rel="stylesheet" />
   </head>
@@ -560,7 +560,7 @@
         <span class="adm-informer-arrow"></span>
       </div>
     </div>
-    <div class="wrap">
+    <div class="wrap is--personal-nav">
       <header class="wrap-header">
         <div class="wrap-header-top">
           <div class="header-top">
@@ -616,19 +616,12 @@
                 <li class="header-top-nav__item">
                   <a class="header-top-nav__link" href="/about/contacts/">Контакты</a>
                 </li>
-                <li class="header-top-nav__item">
-                  <span class="header-top-nav__alert">
-                    <svg>
-                      <use xlink:href="#ico-alert-warning"></use>
-                    </svg>
-                  </span>
-                </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div class="header-bottom" id="header-bottom">
+        <div class="header-bottom header-bottom_sticky" id="header-bottom">
           <div class="header">
             <div class="header-logo">
               <a href="/"><img src="/local/templates/general//daichi-layout/build/images/logo.svg" /></a>
@@ -675,7 +668,7 @@
                     <svg class="ico-svg">
                       <use xlink:href="#ico-favorites"></use>
                     </svg>
-                    <span class="header-cart__count js-header-cart__count"> 8 </span>
+                    <span class="header-cart__count js-header-cart__count"> 2 </span>
                   </i>
                   <span>Избранное</span></a
                 >
@@ -688,7 +681,7 @@
                       <svg class="ico-svg">
                         <use xlink:href="#ico-h-cart"></use>
                       </svg>
-                      <span class="header-cart__count">16</span>
+                      <span class="header-cart__count">1</span>
                     </span>
                     <span class="header-cart__title">Корзина</span>
                   </a>
@@ -718,6 +711,7 @@
                           <div class="points">
                             <div class="points-text">
                               <span>Баллы</span>
+                              <span class="points-value">- 8786 сгорят 24.01.2023</span>
                             </div>
                             <div class="d-points-chip main">
                               <span class="logo">
@@ -725,78 +719,88 @@
                                   <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
                                 </svg>
                               </span>
-                              <span class="value"> 0 </span>
+                              <span class="value"> 13548 </span>
                             </div>
                           </div>
                         </a>
                       </li>
                       <!--                            <li><a href="#">Второй пункт меню размером в две строчки</a></li>-->
                       <li><a href="/personal/profile/">Настройки профиля</a></li>
-                      <li>
-                        <a href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/?logout=yes" class="exit"
-                          >Выход</a
-                        >
-                      </li>
+                      <li><a href="/personal/cart/?logout=yes" class="exit">Выход</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="wrap-main-nav">
+          <div class="wrap-main-nav" style="display: none">
             <div class="main-nav">
               <div class="main-nav__col">
                 <ul class="main-nav-list">
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/" class="main-nav-list__link main-nav-list__link"
-                      >Кондиционирование</a
+                    <a href="/catalog/conditioning/" class="main-nav-list__link">Кондиционирование</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/conditioning/nastennye-split-sistemy/" class="main-nav-list__link"
+                      >Настенные сплит-системы</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a
-                      href="/catalog/konditsionirovanie/bytovye_konditsionery/"
-                      class="main-nav-list__link main-nav-list__link"
-                      >Бытовые кондиционеры</a
-                    >
-                  </li>
-
-                  <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/multisplit_sistemy/" class="main-nav-list__link"
+                    <a href="/catalog/conditioning/multisplit-sistemy/" class="main-nav-list__link"
                       >Мультисплит-системы</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/polupromyshlennye_konditsionery/" class="main-nav-list__link"
-                      >Полупромышленные кондиционеры</a
+                    <a href="/catalog/conditioning/kassetnye-konditsionery/" class="main-nav-list__link"
+                      >Кассетные кондиционеры</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/vozdukhoochistiteli/" class="main-nav-list__link"
+                    <a href="/catalog/conditioning/kanalnye-konditsionery/" class="main-nav-list__link"
+                      >Канальные кондиционеры</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/conditioning/vozdukhoochistiteli_18/" class="main-nav-list__link"
                       >Воздухоочистители</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/aksessuary/" class="main-nav-list__link">Аксессуары</a>
-                  </li>
-
-                  <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/mobilnye_konditsionery/" class="main-nav-list__link"
-                      >Мобильные кондиционеры</a
+                    <a href="/catalog/conditioning/napolno-potolochnye-konditsionery/" class="main-nav-list__link"
+                      >Напольно-потолочные кондиционеры</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/okonnye_konditsionery/" class="main-nav-list__link"
+                    <a href="/catalog/conditioning/split_sistemy/" class="main-nav-list__link">Сплит-системы</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/conditioning/kolonnye-konditsionery/" class="main-nav-list__link"
+                      >Колонные кондиционеры</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/conditioning/okonnye-konditsionery/" class="main-nav-list__link"
                       >Оконные кондиционеры</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/konditsionirovanie/split_sistemy/" class="main-nav-list__link">Сплит-системы</a>
+                    <a href="/catalog/conditioning/mobilnye-konditsionery/" class="main-nav-list__link"
+                      >Мобильные кондиционеры</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/conditioning/aksessuary/" class="main-nav-list__link">Аксессуары</a>
                   </li>
                 </ul>
               </div>
@@ -808,23 +812,13 @@
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/ventilyatsiya/pritochno_vytyazhnye_ustanovki/" class="main-nav-list__link"
-                      >Приточно-вытяжные установки</a
+                    <a href="/catalog/ventilyatsiya/vozdukhoochistiteli/" class="main-nav-list__link"
+                      >Воздухоочистители</a
                     >
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/ventilyatsiya/pritochnye_ustanovki/" class="main-nav-list__link"
-                      >Приточные установки</a
-                    >
-                  </li>
-
-                  <li class="main-nav-list__item">
-                    <a href="/catalog/ventilyatsiya/vytyazhnye_sektsii/" class="main-nav-list__link">Вытяжные секции</a>
-                  </li>
-
-                  <li class="main-nav-list__item">
-                    <a href="/catalog/ventilyatsiya/kompaktnye_ventilyatsionnye_ustanovki/" class="main-nav-list__link"
+                    <a href="/catalog/ventilyatsiya/kompaktnye-ventilyatsionnye-ustanovki/" class="main-nav-list__link"
                       >Компактные вентиляционные установки</a
                     >
                   </li>
@@ -834,11 +828,51 @@
               <div class="main-nav__col">
                 <ul class="main-nav-list">
                   <li class="main-nav-list__item">
-                    <a href="/catalog/otoplenie/" class="main-nav-list__link">Отопление</a>
+                    <a href="/catalog/heat/" class="main-nav-list__link">Отопление</a>
                   </li>
 
                   <li class="main-nav-list__item">
-                    <a href="/catalog/otoplenie/otopitelnye_kotly/" class="main-nav-list__link">Отопительные котлы</a>
+                    <a href="/catalog/heat/chugunnye-tverdotoplivnye/" class="main-nav-list__link"
+                      >Чугунные твердотопливные</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/napolnye-gazovye-kondensatsionnye/" class="main-nav-list__link"
+                      >Напольные газовые конденсационные</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/chugunnye-gazovye/" class="main-nav-list__link">Чугунные газовые</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/stalnye-tverdotoplivnye/" class="main-nav-list__link"
+                      >Стальные твердотопливные</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/nastennye-gazovye-kondensatsionnye/" class="main-nav-list__link"
+                      >Настенные газовые конденсационные</a
+                    >
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/otopitelnye_kotly/" class="main-nav-list__link">Отопительные котлы</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/nastennye-gazovye/" class="main-nav-list__link">Настенные газовые</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/konvektory/" class="main-nav-list__link">Конвекторы</a>
+                  </li>
+
+                  <li class="main-nav-list__item">
+                    <a href="/catalog/heat/otoplenie-aksessuary/" class="main-nav-list__link">Аксессуары</a>
                   </li>
                 </ul>
               </div>
@@ -854,18 +888,99 @@
                 </ul>
 
                 <!--'start_frame_cache_y0XwfU'-->
-                <div class="main-nav-slider">
-                  <div class="main-nav-slider__img">
-                    <a target="_blank" href="/personal/">
-                      <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
-                    </a>
+                <div class="main-nav-slider slick-initialized slick-slider slick-dotted">
+                  <div class="slick-list draggable">
+                    <div class="slick-track" style="opacity: 1; width: 0px; transform: translate3d(0px, 0px, 0px)">
+                      <div
+                        class="main-nav-slider__img slick-slide slick-cloned"
+                        data-slick-index="-1"
+                        aria-hidden="true"
+                        style="width: 0px"
+                        tabindex="-1">
+                        <a target="_blank" href="/personal/" tabindex="-1">
+                          <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
+                        </a>
+                      </div>
+                      <div
+                        class="main-nav-slider__img slick-slide slick-current slick-active"
+                        data-slick-index="0"
+                        aria-hidden="false"
+                        style="width: 0px"
+                        tabindex="0"
+                        role="tabpanel"
+                        id="slick-slide00"
+                        aria-describedby="slick-slide-control00">
+                        <a
+                          target="_blank"
+                          href="/catalog/conditioning/split_sistemy/bytovye_konditsionery_496/"
+                          tabindex="0">
+                          <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
+                        </a>
+                      </div>
+                      <div
+                        class="main-nav-slider__img slick-slide"
+                        data-slick-index="1"
+                        aria-hidden="true"
+                        style="width: 0px"
+                        tabindex="-1"
+                        role="tabpanel"
+                        id="slick-slide01"
+                        aria-describedby="slick-slide-control01">
+                        <a target="_blank" href="/personal/" tabindex="-1">
+                          <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
+                        </a>
+                      </div>
+                      <div
+                        class="main-nav-slider__img slick-slide slick-cloned"
+                        data-slick-index="2"
+                        aria-hidden="true"
+                        style="width: 0px"
+                        tabindex="-1">
+                        <a
+                          target="_blank"
+                          href="/catalog/conditioning/split_sistemy/bytovye_konditsionery_496/"
+                          tabindex="-1">
+                          <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
+                        </a>
+                      </div>
+                      <div
+                        class="main-nav-slider__img slick-slide slick-cloned"
+                        data-slick-index="3"
+                        aria-hidden="true"
+                        style="width: 0px"
+                        tabindex="-1">
+                        <a target="_blank" href="/personal/" tabindex="-1">
+                          <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
 
-                  <div class="main-nav-slider__img">
-                    <a target="_blank" href="/catalog/">
-                      <img src="/upload/rk/9b4/9b49ece031e5019d3cabc32c3de449af.png" />
-                    </a>
-                  </div>
+                  <ul class="slick-dots" role="tablist" style="">
+                    <li class="slick-active" role="presentation">
+                      <button
+                        type="button"
+                        role="tab"
+                        id="slick-slide-control00"
+                        aria-controls="slick-slide00"
+                        aria-label="1 of 2"
+                        tabindex="0"
+                        aria-selected="true">
+                        1
+                      </button>
+                    </li>
+                    <li role="presentation">
+                      <button
+                        type="button"
+                        role="tab"
+                        id="slick-slide-control01"
+                        aria-controls="slick-slide01"
+                        aria-label="2 of 2"
+                        tabindex="-1">
+                        2
+                      </button>
+                    </li>
+                  </ul>
                 </div>
                 <!--'end_frame_cache_y0XwfU'-->
               </div>
@@ -878,33 +993,38 @@
         <div class="header-mobile__logo">
           <a href="/"><img src="/local/templates/general//daichi-layout/build/images/logo.svg" /></a>
         </div>
-        <div class="header-mobile-search">
-          <div class="search-pane">
-            <form action="/search/">
-              <div class="wrap-search-pane-input">
-                <input class="search-pane-input" autocomplete="off" name="q" value="" type="text" placeholder="Поиск" />
-                <button class="search-pane-btn">
-                  <span class="ico-search">
-                    <svg class="ico-svg">
-                      <use xlink:href="#ico-search"></use></svg
-                  ></span>
-                </button>
-                <button type="reset" class="search-pane-btn search-pane-btn_clear">
-                  <svg class="ico-svg">
-                    <use xlink:href="#ico-close"></use>
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
         <div class="header-mobile__toolbar">
           <a class="header-mobile__btn js--mob-nav-open" href="#"
             ><span class="ico-humburger"><span></span><span></span><span></span></span
           ></a>
         </div>
       </div>
-
+      <div class="header-mobile-search">
+        <div class="search-pane">
+          <form action="/search/">
+            <div class="wrap-search-pane-input">
+              <input
+                class="search-pane-input"
+                autocomplete="off"
+                name="q"
+                value=""
+                type="text"
+                placeholder="Поиск по оборудованию и документации" />
+              <button class="search-pane-btn">
+                <span class="ico-search">
+                  <svg class="ico-svg">
+                    <use xlink:href="#ico-search"></use></svg
+                ></span>
+              </button>
+              <button type="reset" class="search-pane-btn search-pane-btn_clear">
+                <svg class="ico-svg">
+                  <use xlink:href="#ico-close"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
       <div class="wrap-mobile-catalog-nav">
         <div class="mobile-catalog-nav">
           <div class="mobile-catalog-nav__header">
@@ -925,57 +1045,73 @@
           </div>
           <div class="mobile-catalog-nav__body">
             <div class="mobile-catalog-nav-section">
-              <a class="mobile-catalog-nav-section__title" href="/catalog/konditsionirovanie/">Кондиционирование</a>
+              <a class="mobile-catalog-nav-section__title" href="/catalog/conditioning/">Кондиционирование</a>
               <div class="mobile-catalog-nav-section__body">
                 <ul class="mobile-catalog-nav-list">
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/bytovye_konditsionery/"
-                      >Бытовые кондиционеры</a
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/nastennye-split-sistemy/"
+                      >Настенные сплит-системы</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/multisplit_sistemy/"
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/multisplit-sistemy/"
                       >Мультисплит-системы</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/kassetnye-konditsionery/"
+                      >Кассетные кондиционеры</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/kanalnye-konditsionery/"
+                      >Канальные кондиционеры</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/vozdukhoochistiteli_18/"
+                      >Воздухоочистители</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
                     <a
                       class="mobile-catalog-nav-list__link"
-                      href="/catalog/konditsionirovanie/polupromyshlennye_konditsionery/"
-                      >Полупромышленные кондиционеры</a
+                      href="/catalog/conditioning/napolno-potolochnye-konditsionery/"
+                      >Напольно-потолочные кондиционеры</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/vozdukhoochistiteli/"
-                      >Воздухоочистители</a
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/split_sistemy/"
+                      >Сплит-системы</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/aksessuary/"
-                      >Аксессуары</a
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/kolonnye-konditsionery/"
+                      >Колонные кондиционеры</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/mobilnye_konditsionery/"
-                      >Мобильные кондиционеры</a
-                    >
-                  </li>
-
-                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/okonnye_konditsionery/"
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/okonnye-konditsionery/"
                       >Оконные кондиционеры</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/konditsionirovanie/split_sistemy/"
-                      >Сплит-системы</a
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/mobilnye-konditsionery/"
+                      >Мобильные кондиционеры</a
                     >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/conditioning/aksessuary/">Аксессуары</a>
                   </li>
                 </ul>
               </div>
@@ -986,29 +1122,15 @@
               <div class="mobile-catalog-nav-section__body">
                 <ul class="mobile-catalog-nav-list">
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a
-                      class="mobile-catalog-nav-list__link"
-                      href="/catalog/ventilyatsiya/pritochno_vytyazhnye_ustanovki/"
-                      >Приточно-вытяжные установки</a
-                    >
-                  </li>
-
-                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/ventilyatsiya/pritochnye_ustanovki/"
-                      >Приточные установки</a
-                    >
-                  </li>
-
-                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/ventilyatsiya/vytyazhnye_sektsii/"
-                      >Вытяжные секции</a
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/ventilyatsiya/vozdukhoochistiteli/"
+                      >Воздухоочистители</a
                     >
                   </li>
 
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
                     <a
                       class="mobile-catalog-nav-list__link"
-                      href="/catalog/ventilyatsiya/kompaktnye_ventilyatsionnye_ustanovki/"
+                      href="/catalog/ventilyatsiya/kompaktnye-ventilyatsionnye-ustanovki/"
                       >Компактные вентиляционные установки</a
                     >
                   </li>
@@ -1017,13 +1139,57 @@
             </div>
 
             <div class="mobile-catalog-nav-section">
-              <a class="mobile-catalog-nav-section__title" href="/catalog/otoplenie/">Отопление</a>
+              <a class="mobile-catalog-nav-section__title" href="/catalog/heat/">Отопление</a>
               <div class="mobile-catalog-nav-section__body">
                 <ul class="mobile-catalog-nav-list">
                   <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
-                    <a class="mobile-catalog-nav-list__link" href="/catalog/otoplenie/otopitelnye_kotly/"
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/chugunnye-tverdotoplivnye/"
+                      >Чугунные твердотопливные</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/napolnye-gazovye-kondensatsionnye/"
+                      >Напольные газовые конденсационные</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/chugunnye-gazovye/"
+                      >Чугунные газовые</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/stalnye-tverdotoplivnye/"
+                      >Стальные твердотопливные</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/nastennye-gazovye-kondensatsionnye/"
+                      >Настенные газовые конденсационные</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/otopitelnye_kotly/"
                       >Отопительные котлы</a
                     >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/nastennye-gazovye/"
+                      >Настенные газовые</a
+                    >
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/konvektory/">Конвекторы</a>
+                  </li>
+
+                  <li class="mobile-catalog-nav-list__item mobile-catalog-nav-list__item_act">
+                    <a class="mobile-catalog-nav-list__link" href="/catalog/heat/otoplenie-aksessuary/">Аксессуары</a>
                   </li>
                 </ul>
               </div>
@@ -1060,7 +1226,7 @@
                     <svg class="ico-svg">
                       <use xlink:href="#ico-h-cart"></use>
                     </svg>
-                    <span class="header-cart__count">16</span>
+                    <span class="header-cart__count">1</span>
                   </span>
                   <span class="header-cart__title">Корзина</span>
                 </a>
@@ -1190,7 +1356,6 @@
               >
             </li>
           </ul>
-
           <div class="mobile-menu-devider"></div>
 
           <ul class="mobile-nav mobile-nav_gray">
@@ -1229,766 +1394,734 @@
           <ul
             class="breadcrumbs"
             itemprop="http://schema.org/breadcrumb"
-            itemscope
+            itemscope=""
             itemtype="http://schema.org/BreadcrumbList">
-            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Личный кабинет</a></li>
             <li
               class="breadcrumbs__item"
               id="bx_breadcrumb_0"
               itemprop="itemListElement"
-              itemscope
+              itemscope=""
               itemtype="http://schema.org/ListItem">
-              <a class="breadcrumbs__link" href="/catalog/" title="API" itemprop="item">
-                <span itemprop="name">API</span>
+              <a class="breadcrumbs__link" href="/catalog/" title="←&nbsp; Продолжить покупки" itemprop="item">
+                <span itemprop="name">←&nbsp; Продолжить покупки</span>
               </a>
               <meta itemprop="position" content="1" />
             </li>
           </ul>
-          <div class="breadcrumbs-mobile">
-            <a class="breadcrumbs-mobile__link" href="/catalog/konditsionirovanie/bytovye_konditsionery/">&lt; Назад</a>
+          <div class="breadcrumbs-slot">
+            <span class="dropdown-menu" data-dropdown-menu="" data-position="bottom-end">
+              <form enctype="multipart/form-data" method="post" id="js-stores">
+                <input type="hidden" name="CURRENT_STORE" />
+                <input type="hidden" name="sessid" id="sessid" value="2468919e68b7b4fc3291cedcff876504" />
+
+                <span class="dropdown-menu__title">Доступность на складе: </span>
+
+                <a class="dropdown-menu__link" href="#" data-dropdown-link="">Волгоград Новый</a>
+              </form>
+            </span>
           </div>
         </div>
         <section class="section-main">
-          <div class="api-page">
-            <div class="api-page__promo">
-              <div class="api-page__promo-content">
-                <h1 class="api-page__promo-title">Подключайте API Daichi&nbsp;Бизнес!</h1>
-                <p class="api-page__promo-desc">
-                  API позволяет интегрировать ваши онлайн-магазины и&nbsp;учётные системы с&nbsp;базами данных Daichi
-                  Бизнес.<br />
-                  Вы&nbsp;будете получать актуальную информацию по&nbsp;товарам и&nbsp;их&nbsp;остаткам онлайн.
-                </p>
-                <a class="api-page__promo-btn btn">Получить ключ API</a>
-              </div>
-            </div>
+          <h1>Моя корзина</h1>
 
-            <div class="api-page__block">
-              <h2>Общие входные параметры</h2>
-              <div class="api-page__part">
-                <div class="api-page__code no-break">
-                  GET https://api.daichi.ru/b2b/<wbr /><версия>/<метод>?<wbr /><параметры>
-                </div>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Положение</th>
-                      <th>Тип</th>
-                      <th>Обязательный</th>
-                      <th>Описание</th>
-                    </tr>
-                    <tr>
-                      <td>version</td>
-                      <td>Path</td>
-                      <td>Enum</td>
-                      <td>Да</td>
-                      <td>Версия API</td>
-                    </tr>
-                    <tr>
-                      <td>access-token</td>
-                      <td>Path</td>
-                      <td>String</td>
-                      <td>Да</td>
-                      <td>Авторизационный ключ (идентификатор партнёра)</td>
-                    </tr>
-                  </table>
-                </div>
-                <p class="api-page__note">
-                  Взаимодействие с сервисом происходит в режиме онлайн с помощью стандартного протокола HTTPS. Ответ
-                  предоставляется в формате JSON
-                </p>
-                <p class="api-page__text-block">
-                  Индикатором выполнения запросов служат стандартный http status code:<br />
-                  <b>2xx</b> - успешное выполнение<br />
-                  <b>4xx</b> - ошибки на стороне клиента<br />
-                  <b>5хх</b> - ошибки на стороне сервера
-                </p>
-              </div>
-              <div class="api-page__part">
-                <h3>Пример ответа при ошибке</h3>
-                <div class="api-page__code-block">
-                  <!--prettier-ignore-->
-                  <div class="api-page__code api-page__code--example">
-                    <pre><code>Response:
-Status: 401
-{
-        <span class="red">"Result"</span>: {
-                <span class="red">"error"</span>: <span class="blue">"Неверный API KEY"</span>,
-                <span class="red">"success"</span>: <span class="blue"><b>false</b></span>
-        },
-        <span class="red">"Time"</span>: <span class="green">0.1100621223449707</span>
-}</code></pre>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <script id="basket-item-template" type="text/html">
+            	<div class="cart-list-item"
+            		id="basket-item-{{ID}}" data-entity="basket-item" data-id="{{ID}}">
+            		{{^SHOW_RESTORE}}
+            		<div class="cart-list-item__body">
+            			<div class="cart-list-item__index">{{INDEX}}</div>
+            			<div class="cart-list-item__img">
+                            <a href="{{DETAIL_PAGE_URL}}">
+                                {{#IMAGE_URL}}
+                                <img src="{{IMAGE_URL}}">
+                                {{/IMAGE_URL}}
+                                {{^IMAGE_URL}}
+                                <img src="/images/no-photos.svg">
+                                {{/IMAGE_URL}}
+                            </a>
+                        </div>
+            			<div class="cart-list-item__title">
+                            <span class="table-mobile-title">
+                                Наименование                </span>
+                            <span>
+                                <a href="{{DETAIL_PAGE_URL}}">{{BRAND}} {{NAME}}</a>
+                                {{#BONUS}}
+                                    <span class="points">+{{BONUS_HTML}} °D баллов</span>
+                                {{/BONUS}}
 
-            <div class="api-page__block">
-              <h2>Получение списка доступных складов</h2>
-              <div class="api-page__part">
-                <div class="api-page__code">
-                  Method: GET<br />
-                  Path: /stores/get
+                            </span>
+                        </div>
+
+            			<div class="cart-list-item__amount">
+            				<div class="amount amount_open {{#QUANTITY_INVALIDATE}}amount_error{{/QUANTITY_INVALIDATE}}"
+                                    data-available-qnt = "{{AVAILABLE_QUANTITY}}"
+                                    data-product-id = "{{PRODUCT_ID}}"
+                                    data-qnt-selector
+                            >
+            					<div class="amount__body">
+            						<button class="amount-btn js-amount-btn_reduce amount-btn_reduce js-amount-btn" data-min = "1" data-type = "reduce" type="button" >-</button>
+            						<span class="wrap-amount-input">
+            								<input
+            									class="amount-input js-amount-input"
+            									type="text"
+            									value="{{QUANTITY}}"
+            									data-value="{{QUANTITY}}"
+            									data-entity="basket-item-quantity-field"
+            									id="basket-item-quantity-{{ID}}"
+            									readonly
+            								>
+            						</span>
+            						<button class="amount-btn js-amount-btn_increase amount-btn_increase js-amount-btn"  data-type = "increase" type="button" >+</button>
+            					</div>
+            					<div class="amount__btn js-amount-init-btn">
+            						<button class="amount-buy-btn">
+            							<span class="ico-amount-cart">
+            								  <svg class="ico-svg">
+            									<use xlink:href="#ico-cart"></use>
+            								  </svg>
+            							</span>
+                                    </button>
+            					</div>
+            				</div>
+            			</div>
+                        <div class="cart-list-item__price">
+                            <span class="table-mobile-title">Сумма</span>
+            	            {{^EMPTY_PRICE}}
+                            <div class="price-pane-cart">
+                                <span class="price-pane-cart__summ">{{SUM_PRICE_FORMATED}}</span>
+                                <span class="price-pane-cart__count">{{QUANTITY}} x {{SUM_PRICE_FORMATED_NO_CURRENCY}}</span>
+                            </div>
+            	            {{/EMPTY_PRICE}}
+            	            {{#EMPTY_PRICE}}
+            	            &ndash;
+            	            {{/EMPTY_PRICE}}
+                        </div>
+            			<div class="cart-list-item__toolbar">
+            				<a class="cart-list-item__favorite js-cart-list-item-favorite add-favorites-link js-add-favorites{{IN_FAVS}}" data-element-id = "{{PRODUCT_ID}}" href="#">
+            					<svg class="ico-svg">
+            						<use xlink:href="#ico-favorites"></use>
+            					</svg>
+                            </a>
+            <!--                <a class="cart-list-item__delete js-cart-list-item-delete" data-entity="basket-item-delete" href="javascript:void(0);">-->
+                            <a class="cart-list-item__delete js-cart-list-item-delete js-amount-btn-delete" data-id = {{PRODUCT_ID}} data-type = "delete">
+            					<svg class="ico-svg">
+            						<use xlink:href="#ico-close-thin"></use>
+            					</svg>
+                            </a>
+            			</div>
+            		</div>
+                    {{^EMPTY_PRICE}}
+            		{{#QUANTITY_INVALIDATE}}
+                    <div class="cart-list-item__msg">На складе “Волгоград Новый” на данный момент
+            	        <span class="is--mark">доступно {{AVAILABLE_QUANTITY}} шт. для заказа</span>.
+                        {{#ANALOG_LINK_EXISTS}}Посмотрите <a target = '_blank' href="{{ANALOG_LINK}}">аналогичные товары</a>.{{/ANALOG_LINK_EXISTS}}
+                    </div>
+            		{{/QUANTITY_INVALIDATE}}
+                    {{/EMPTY_PRICE}}
+
+                    {{#EMPTY_PRICE}}
+                    <div class="cart-list-item__msg">На данный момент товар не доступен для заказа</span>.
+                       <a href="javascript:void(0);" class="js-price-not-defined">
+                            Уточните цену у вашего менеджера</a>
+                    </div>
+                    {{/EMPTY_PRICE}}
+
+
+
+            		{{^QUANTITY_INVALIDATE}}
+            		<div class="cart-list-item__msg">
+            			<span class="cart-stock">
+            				<span class="cart-stock__item">
+            					<span class="ico-cart-stock">
+            		                <svg class="ico-svg">
+            		                    <use xlink:href="#ico-home"></use>
+            		                </svg>
+                                </span>сейчас на складе: {{AVAILABLE_QUANTITY_IN_STORE}}
+                            </span>
+
+                            {{#AVAILABLE_QUANTITY_IN_DELIVER}}
+                            <span class="cart-stock__item"><span class="ico-cart-stock">
+            		                <svg class="ico-svg">
+            		                    <use xlink:href="#ico-truck"></use>
+            		                </svg>
+                                </span>
+                                    {{AVAILABLE_QUANTITY_IN_DELIVER}} в пути
+                            </span>
+                            {{/AVAILABLE_QUANTITY_IN_DELIVER}}
+
+            			</span>
+            		</div>
+            		{{/QUANTITY_INVALIDATE}}
+
+            		{{/SHOW_RESTORE}}
+            	</div>
+          </script>
+          <script id="basket-total-template" type="text/html">
+
+                 <div class="cart-summary-points">
+                <div class="cart-summary">
+                    <ul class="cart-summary-list">
+                        <li><span>Итого</span><b> {{{PRICE_FORMATED}}}</b></li>
+                        <li><span>Позиций</span><b> {{{COUNT}}}</b></li>
+                        <li><span>Количество товаров</span><b> {{{ALL_QNT}}}</b></li>
+                    </ul>
+                                    <div class="cart-summary-price"><span class="cart-summary-price__title">К оплате</span><span class="cart-summary-price__val">{{{PRICE_WITH_FICT_DISCOUNT_FORMATED}}}</span></div>
+                    {{#ALL_BONUSES}}
+                        <ul class="cart-summary-list">
+                            <li><span>Будет начислено</span><b> {{{ALL_BONUSES_HTML}}} °D баллов</b></li>
+                        </ul>
+                    {{/ALL_BONUSES}}
+                    <div class="cart-summary__checkout">
+                        <a class="btn" href = '/personal/order/make/' {{#DISABLE_CHECKOUT}} disabled{{/DISABLE_CHECKOUT}} >Перейти к оформлению</a>
+                    </div>
+                </div>
+
+
+                {{#CURRENT_BONUSES}}
+                    <div class="product-card__points">
+                        <div class="d-points-chip main cart">
+                                <span class="logo">
+                                  <svg>
+                                    <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
+                                  </svg>
+                                </span>
+                            <span class="value">{{CONFIRM_WORK_BONUSES}}</span>
+                        </div>
+                        <p class="product-card__points-title">Ваша скидка — {{CURRENT_BONUSES_HTML}} {{CURRENCY_POSTFIX}}!</p>
+                        <p class="product-card__points-desc">У вас останется {{BONUSES_REMAIN_HTML}} °D баллов</p>
+                        <a onclick="$('#spend-points').addClass('js-show')">Изменить →</a>
+                    </div>
+                {{/CURRENT_BONUSES}}
+                {{^CURRENT_BONUSES}}
+                    {{#CAN_DOWN_BONUSES}}
+                        <div class="product-card__points">
+                            <div class="d-points-chip main cart">
+                                <span class="logo">
+                                  <svg>
+                                    <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
+                                  </svg>
+                                </span>
+                                <span class="value">{{CONFIRM_WORK_BONUSES}}</span>
+                            </div>
+
+                            <p class="product-card__points-title">Купите дешевле на {{CAN_DOWN_BONUSES_HTML}}</p>
+                            <p class="product-card__points-desc">Вы можете получить скидку, потратив накопленные
+                                баллы!</p>
+                            <a onclick="$('#spend-points').addClass('js-show')" >Потратить баллы →</a>
+                        </div>
+                    {{/CAN_DOWN_BONUSES}}
+                {{/CURRENT_BONUSES}}
+
+
+                            <div class="cart-summary-mobile">
+                    <div class="cart-summary-mobile__summ">{{{PRICE_WITH_FICT_DISCOUNT_FORMATED}}}<span>{{{ALL_QNT}}} {{{ALL_QNT_WORD}}}</span></div>
+                    <div class="cart-summary-mobile__btn"><a class="btn btn_small" href="/personal/order/make/" {{#DISABLE_CHECKOUT}} disabled{{/DISABLE_CHECKOUT}}>К оформлению</a></div>
+                </div>
+
+            </div>
+          </script>
+          <script id="basket-bonus-template" type="text/html">
+            <section id="spend-points" class="modal">
+              <div class="modal__overlay">
+                <div class="modal__body">
+                  <button class="modal__close-button" onclick="$('#spend-points').removeClass('js-show')">
+                    <svg>
+                      <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#close"></use>
+                    </svg>
+                  </button>
+                  <form>
+                    <h1 class="modal__title with-line">Сколько баллов вы хотите потратить?</h1>
+                    <div class="modal__content">
+                      <div class="spend-points">
+                        <div
+                          class="spend-points__bar"
+                          data-total="
+                                {{CONFIRM_BONUSES}}
+                            ">
+                          <div class="spend-points__bar-current" style="width: {{CURRENT_BONUSES_RANGE}}%;">
+                            <span class="spend-points__bar-current-text">
+                              <span>{{CURRENT_BONUSES}}</span>
+                              °D баллов
+                            </span>
+                          </div>
+
+                          <div class="spend-points__bar-limit" style="width:{{BONUS_LIMIT_RANGE}}%;">
+                            <!--                                <span>--><!--</span>-->
+                            <!--                                °D баллов-->
+                          </div>
+                        </div>
+                        <div class="spend-points__info">
+                          <div class="spend-points__info-part">
+                            <div class="d-points-chip main">
+                              <span class="logo">
+                                <svg>
+                                  <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
+                                </svg>
+                              </span>
+                              <span class="value" id="spend-points-total">{{CONFIRM_WORK_BONUSES}}</span>
+                            </div>
+                            <p class="spend-points__info-label">Ваши баллы</p>
+                          </div>
+                          <div class="spend-points__info-part">
+                            <p class="spend-points__info-points">
+                              <span id="spend-points-limit">{{CAN_DOWN_BONUSES}}</span> °D баллов
+                            </p>
+                            <p class="spend-points__info-label">Можете потратить сейчас</p>
+                          </div>
+                          <div class="spend-points__info-part">
+                            <p class="spend-points__info-points">
+                              <span id="spend-points-current">{{CURRENT_BONUSES}}</span> °D баллов
+                            </p>
+
+                            <p class="spend-points__info-label">Собираетесь потратить</p>
+                          </div>
+                        </div>
+                      </div>
+                      <p class="spend-points__calculate-title">
+                        Укажите количество баллов, которое вы хотите потратить на покупку.
+                        1&nbsp;балл&nbsp;=&nbsp;1&nbsp;{{CURRENCY_POSTFIX}}.
+                      </p>
+                      <div class="input-block points">
+                        <input class="input-text" type="text" name="points-amount" value="{{CURRENT_BONUSES}}" />
+                        <p class="spend-points__error-message">Вы не можете потратить указанное количество баллов</p>
+                        <button class="spend-points__minus" type="button">-</button>
+                        <button class="spend-points__plus" type="button">+</button>
+                      </div>
+                    </div>
+                    <div class="spend-points__bottom-block">
+                      <div class="spend-points__balance">
+                        После списания останется<br /><span>{{BONUSES_REMAIN}}</span> °D баллов
+                      </div>
+                      <div class="modal__btn-block">
+                        <button
+                          onclick="confirmBonuses(event)"
+                          type="submit"
+                          class="modal__btn-item btn-primary"
+                          disabled="disabled">
+                          Потратить °D баллы
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-              <div class="api-page__part">
-                <h3>Входные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Положение</th>
-                      <th>Тип</th>
-                      <th>Обязательный</th>
-                      <th>Описание</th>
-                    </tr>
-                    <tr>
-                      <td>version</td>
-                      <td>Path</td>
-                      <td>Enum</td>
-                      <td>Да</td>
-                      <td>Версия API</td>
-                    </tr>
-                    <tr>
-                      <td>access-token</td>
-                      <td>Path</td>
-                      <td>String</td>
-                      <td>Да</td>
-                      <td>Авторизационный ключ (идентификатор партнёра)</td>
-                    </tr>
-                  </table>
-                </div>
+            </section>
+          </script>
+          <div id="basket-root" class="cart-page bx-basket bx-blue bx-step-opacity" style="opacity: 1">
+            <div class="cart-page-main">
+              <div class="cart-page__clear"><a href="#" data-entity="delete-all-basket-items">Очистить корзину</a></div>
+              <div class="alert alert_info warning">
+                <span class="alert_warning-icon">
+                  <svg><use xlink:href="#ico-alert-warning"></use></svg>
+                </span>
+                В связи с проведением технических работ на сервере, могут некорректно отображаться данные оформленных
+                заказов, а&nbsp;также происходить задержки при выставлении счётов.
+                <a data-code="IS_CHANGED_STORE" class="alert__close" href="#">
+                  <svg class="ico-svg">
+                    <use xlink:href="#ico-close-thin"></use></svg
+                ></a>
               </div>
-              <div class="api-page__part">
-                <h3>Выходные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Тип</th>
-                      <th>Описание</th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                    <tr>
-                      <td>Result</td>
-                      <td>Object list</td>
-                      <td>Список складов</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в Result</td>
-                    </tr>
-                    <tr>
-                      <td>NAME</td>
-                      <td>String</td>
-                      <td>Наименование склада</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>XML_ID</td>
-                      <td>GUID</td>
-                      <td>Идентификатор склада</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>IS_DEFAULT</td>
-                      <td>Boolean</td>
-                      <td colspan="3">
-                        <span class="dot">false</span>
-                        <br />
-                        <span class="dot">true</span>
-                        <br /><br />
-                        Склад со значение IS_DEFAULT = true (склад по-умолчанию) первым показывается в каталоге для
-                        отображения доступности оборудования. Актуально для партнёров с несколькими складами.
-                        <br /><br />
-                        <span class="small">
-                          Для склада по-умолчанию в методах, где требуется указать параметр store-id, в качестве
-                          значения параметра может быть указано значение default. Таким образом, для партнёров с одним
-                          складом метод stores/get можно не использовать, а в качестве store-id в других методах сразу
-                          указывать значение default, т.к. единственный доступный склад и будет складом по-умолчанию.
+              <div class="alert alert_info">
+                Остатки и доступность товаров были скорректированы в соответствии с выбранным складом: Волгоград Новый<a
+                  data-code="IS_CHANGED_STORE"
+                  class="alert__close"
+                  href="#">
+                  <svg class="ico-svg">
+                    <use xlink:href="#ico-close-thin"></use></svg
+                ></a>
+              </div>
+              <div class="alert alert_info">
+                Обратите внимание, что Комплекты добавляются в корзину как отдельные товары.<a
+                  data-code="IS_ADDED_IN_SET"
+                  class="alert__close"
+                  href="#">
+                  <svg class="ico-svg">
+                    <use xlink:href="#ico-close-thin"></use></svg
+                ></a>
+              </div>
+              <div class="panel panel_cart">
+                <div class="wrap-cart-list" id="basket-items-list-wrapper">
+                  <div class="cart-list" id="basket-item-table">
+                    <div class="cart-list-item cart-list-item__head">
+                      <div class="cart-list-item__body">
+                        <div class="cart-list-item__index"><span>№</span></div>
+                        <div class="cart-list-item__img"><span>&nbsp;</span></div>
+                        <div class="cart-list-item__title"><span>Наименование</span></div>
+                        <div class="cart-list-item__amount"><span>&nbsp;</span></div>
+                        <div class="cart-list-item__price"><span>Суммарная цена</span></div>
+                        <div class="cart-list-item__toolbar"><span>&nbsp;</span></div>
+                      </div>
+                    </div>
+
+                    <div class="cart-list-item" id="basket-item-1742" data-entity="basket-item" data-id="1742">
+                      <div class="cart-list-item__body">
+                        <div class="cart-list-item__index">1</div>
+                        <div class="cart-list-item__img">
+                          <a
+                            href="/catalog/conditioning/nastennye-split-sistemy/nastennye-vnutrennie-bloki/KSGTE26HZAN1/">
+                            <img src="/upload/iblock/e81/e815c45817f250743e01944ec9b1939a.jpg" />
+                          </a>
+                        </div>
+                        <div class="cart-list-item__title">
+                          <span class="table-mobile-title"> Наименование </span>
+                          <span>
+                            <a
+                              href="/catalog/conditioning/nastennye-split-sistemy/nastennye-vnutrennie-bloki/KSGTE26HZAN1/"
+                              >Kentatsu KSGTE26HZAN1</a
+                            >
+                          </span>
+                        </div>
+
+                        <div class="cart-list-item__amount">
+                          <div
+                            class="amount amount_open qnt-selector-initialized"
+                            data-available-qnt="79"
+                            data-product-id="10984"
+                            data-qnt-selector="">
+                            <div class="amount__body">
+                              <button
+                                class="amount-btn js-amount-btn_reduce amount-btn_reduce js-amount-btn"
+                                data-min="1"
+                                data-type="reduce"
+                                type="button">
+                                -
+                              </button>
+                              <span class="wrap-amount-input">
+                                <input
+                                  class="amount-input js-amount-input"
+                                  type="text"
+                                  value="1"
+                                  data-value="1"
+                                  data-entity="basket-item-quantity-field"
+                                  id="basket-item-quantity-1742"
+                                  readonly="" />
+                              </span>
+                              <button
+                                class="amount-btn js-amount-btn_increase amount-btn_increase js-amount-btn"
+                                data-type="increase"
+                                type="button">
+                                +
+                              </button>
+                            </div>
+                            <div class="amount__btn js-amount-init-btn">
+                              <button class="amount-buy-btn">
+                                <span class="ico-amount-cart">
+                                  <svg class="ico-svg">
+                                    <use xlink:href="#ico-cart"></use>
+                                  </svg>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart-list-item__price">
+                          <span class="table-mobile-title">Сумма</span>
+                          <div class="price-pane-cart">
+                            <span class="price-pane-cart__summ">18 863,09 ₽</span>
+                            <span class="price-pane-cart__count">1 x 18 863,09</span>
+                          </div>
+                        </div>
+                        <div class="cart-list-item__toolbar">
+                          <a
+                            class="cart-list-item__favorite js-cart-list-item-favorite add-favorites-link js-add-favorites"
+                            data-element-id="10984"
+                            href="#">
+                            <svg class="ico-svg">
+                              <use xlink:href="#ico-favorites"></use>
+                            </svg>
+                          </a>
+                          <!--                <a class="cart-list-item__delete js-cart-list-item-delete" data-entity="basket-item-delete" href="javascript:void(0);">-->
+                          <a
+                            class="cart-list-item__delete js-cart-list-item-delete js-amount-btn-delete"
+                            data-id="10984"
+                            data-type="delete">
+                            <svg class="ico-svg">
+                              <use xlink:href="#ico-close-thin"></use>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="cart-list-item__msg">
+                        <span class="cart-stock">
+                          <span class="cart-stock__item">
+                            <span class="ico-cart-stock">
+                              <svg class="ico-svg">
+                                <use xlink:href="#ico-home"></use>
+                              </svg>
+                            </span>
+                            <span class="is--stock">10 в наличии на складе</span>
+                            <span class="is--city">50 шт. Волгоград</span>
+                            <span class="is--city">50 шт. Москва</span>
+                          </span>
                         </span>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Пример запроса</h3>
-                <div class="api-page__code">
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/stores/get/?access-token=access-demo">
-                    <span>https://api.daichi.ru/b2b/v1/stores/get/?access-token=access-demo</span>
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Формат ответа</h3>
-                <div class="api-page__code-block">
-                  <!--prettier-ignore-->
-                  <div class="api-page__code api-page__code--example">
-                    <pre><code>{
-        <span class="red">"Result"</span>: [
-                {
-                        <span class="red">"NAME"</span>: <span class="blue">"Новосибирск"</span>,
-                        <span class="red">"XML_ID"</span>: <span class="blue">"e7be65c5-f376-11ea-8047-00155db05a13"</span>
-                        <span class="red">"IS_DEFAULT"</span>: <span class="blue">false</span>
-                },
-                {
-                        <span class="red">"NAME"</span>: <span class="blue">"Волгоград"</span>,
-                        <span class="red">"XML_ID"</span>: <span class="blue">"eb3dda72-62bd-11ea-bfed-00155df9f508"</span>
-                        <span class="red">"IS_DEFAULT"</span>: <span class="blue">true</span>
-                },
-        ],
-        <span class="red">"Time"</span>: <span class="green">0.7249960899353027</span>
-}</code></pre>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="cart-page-aside" data-entity="basket-total-block">
+              <div class="cart-summary-points">
+                <div class="cart-summary">
+                  <ul class="cart-summary-list">
+                    <li><span>Итого</span><b> 18 863,09 ₽</b></li>
+                    <li><span>Позиций</span><b> 1</b></li>
+                    <li><span>Количество товаров</span><b> 1</b></li>
+                  </ul>
+                  <div class="cart-summary-price">
+                    <span class="cart-summary-price__title">К оплате</span
+                    ><span class="cart-summary-price__val">18 863,09 ₽</span>
+                  </div>
+                  <div class="cart-summary__checkout">
+                    <a class="btn" href="/personal/order/make/">Перейти к оформлению</a>
+                  </div>
+                </div>
 
-            <div class="api-page__block">
-              <h2>Получение списка доступных складов</h2>
-              <div class="api-page__part">
-                <div class="api-page__code">
-                  Method: GET<br />
-                  Path: /products/get
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Входные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Положение</th>
-                      <th>Тип</th>
-                      <th>Обязательный</th>
-                      <th>Описание</th>
-                    </tr>
-                    <tr>
-                      <td>version</td>
-                      <td>Path</td>
-                      <td>Enum</td>
-                      <td>Да</td>
-                      <td>Версия API</td>
-                    </tr>
-                    <tr>
-                      <td>access-token</td>
-                      <td>Path</td>
-                      <td>String</td>
-                      <td>Да</td>
-                      <td>Авторизационный ключ (идентификатор партнёра)</td>
-                    </tr>
-                    <tr>
-                      <td>store-id</td>
-                      <td>Path</td>
-                      <td>GUID</td>
-                      <td>Да</td>
-                      <td>Идентификатор склада (или значение default для склада по-умолчанию)</td>
-                    </tr>
-                    <tr>
-                      <td>filter[NAME]</td>
-                      <td>Path</td>
-                      <td>GUID</td>
-                      <td>Нет</td>
-                      <td>Фильтр результатов по артикулу товара.</td>
-                    </tr>
-                    <tr>
-                      <td>filter[XML_ID]</td>
-                      <td>Path</td>
-                      <td>String</td>
-                      <td>Нет</td>
-                      <td>Фильтр результатов по идентификатору товара.</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Выходные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Тип</th>
-                      <th>Описание</th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                    <tr>
-                      <td>Result</td>
-                      <td>Object list</td>
-                      <td>Список карточек товаров</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в Result</td>
-                    </tr>
-                    <tr>
-                      <td>NAME</td>
-                      <td>String</td>
-                      <td>Артикул товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>XML_ID</td>
-                      <td>GUID</td>
-                      <td>Идентификатор товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>PARAMS</td>
-                      <td>Object</td>
-                      <td>Параметры товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>PRICES</td>
-                      <td>Object</td>
-                      <td>Массив цен на товар</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>STORE</td>
-                      <td>Object</td>
-                      <td>Информация о наличии товара на складе</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в PARAMS</td>
-                    </tr>
-                    <tr>
-                      <td>BRAND</td>
-                      <td>String</td>
-                      <td>Бренд</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>ATTR_L_SERIA</td>
-                      <td>String</td>
-                      <td>Серия</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>ATTR_L_IN_UNIT_TYPE</td>
-                      <td>String</td>
-                      <td>Тип внутреннего блока</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>ATTR_L_GOODGROUP</td>
-                      <td>String</td>
-                      <td>Группа товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>ATTR_L_GOODTYPE</td>
-                      <td>String</td>
-                      <td>Тип товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>ATTR_RUS_NAME_AX</td>
-                      <td>String</td>
-                      <td>Наименование товара</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в PRICES</td>
-                    </tr>
-                    <tr>
-                      <td>XML_ID</td>
-                      <td>Enum</td>
-                      <td>Идентификатор цены</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>NAME</td>
-                      <td>String</td>
-                      <td colspan="2">
-                        Наименование цены<br />
-                        Розничная цена указывается с учётом персональной скидки партнёра.
-                      </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>PRICE</td>
-                      <td>Float</td>
-                      <td>Значение цены</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>CURRENCY</td>
-                      <td>Enum</td>
-                      <td>
-                        Код валюты<br />
-                        Возможные значения:
-                        <br />
-                        <br />
-                        <span class="dot">RUR</span><br />
-                        <span class="dot">USD</span><br />
-                        <span class="dot">EUR</span><br />
-                        <span class="dot">KZT</span>
-                      </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в STORE</td>
-                    </tr>
-                    <tr>
-                      <td>NAME</td>
-                      <td>String</td>
-                      <td>Наименование склада</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>XML_ID</td>
-                      <td>GUID</td>
-                      <td>Идентификатор склада</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>STORE_AMOUNT</td>
-                      <td>Integer</td>
-                      <td colspan="2">Количество свободного (не забронированного) товара на складе (‘На складе’)</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>DELIVERY_AMOUNT</td>
-                      <td>Integer</td>
-                      <td colspan="2">
-                        Количество товара, которое может быть доставлено на склад в&nbsp;течении 14 дней (‘В пути’)
-                      </td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>STORE_PARAMS_INFO</td>
-                      <td>Object</td>
-                      <td colspan="2">Ограничение на инфорацию о доступности товара на складе</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td>DELIVERY_PARAMS_INFO</td>
-                      <td>Object</td>
-                      <td colspan="2">Ограничение на инфорацию о доступности товара в пути</td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td class="api-page__table-subtitle" colspan="5">Параметры, вложенные в STORE_PARAMS_INFO</td>
-                    </tr>
-                    <tr>
-                      <td>LIMIT</td>
-                      <td>Integer</td>
-                      <td colspan="3">
-                        Количество, больше которого не показывется точное значение. При превышении ограничения на
-                        портале точное значение заменяется выражением ‘>’
-                        <br /><br />
-                        (например, > 50 на складе)
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>HIDE_MORE_LIMIT</td>
-                      <td>Boolean</td>
-                      <td colspan="3">
-                        <span class="dot"> false (лимит не превышен. STORE_AMOUNT показывает точное значение) </span>
-                        <br />
-                        <span class="dot"> true (лимит превышен. STORE_AMOUNT ограничено значением LIMIT) </span>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Пример запроса</h3>
-                <div class="api-page__code">
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13">
-                    <span
-                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13</span
-                    >
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=default">
-                    <span>https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=default</span>
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bNAME%5d=KSRQ80HFAN1">
-                    <span
-                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bNAME%5d=KSRQ80HFAN1</span
-                    >
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bXML_ID%5d=b756c377-6912-11ea-bfef-00155df9f508">
-                    <span
-                      >https://api.daichi.ru/b2b/v1/products/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13&filter%5bXML_ID%5d=b756c377-6912-11ea-bfef-00155df9f508</span
-                    >
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Формат ответа</h3>
-                <div class="api-page__code-block">
-                  <!--prettier-ignore-->
-                  <div class="api-page__code api-page__code--example">
-                    <pre><code>{
-        <span class="red">"Result"</span>: {
-                <span class="red">"15608":</span> {
-                        <span class="red">"NAME"</span>: <span class="blue">"Climate 5000 RAC 2,6-3 IBW"</span>,
-                        <span class="red">"XML_ID"</span>: <span class="blue">"7849a166-66ef-11eb-804b-00155db05a13"</span>,
-                        <span class="red">"PARAMS:"</span>: {
-                                <span class="red">"BRAND"</span>: <span class="blue">"Bosch"</span>,
-                                <span class="red">"ATTR_L_SERIA"</span>: <span class="blue">"Climate 5000"</span>,
-                                <span class="red">"ATTR_L_IN_UNIT_TYPE"</span>: <span class="blue">"Настенный"</span>,
-                                <span class="red">"ATTR_L_GOODGROUP"</span>: <span class="blue">"Бытовые сплит-системы"</span>,
-                                <span class="red">"ATTR_L_GOODTYPE"</span>: <span class="blue">"Внутренний блок"</span>,
-                                <span class="red">"ATTR_RUS_NAME_AX"</span>: <span class="blue">"Внутренний блок кондиционера"</span>
-                        },
-                        <span class="red">"PRICES:"</span>: {
-                                <span class="red">"BASE:"</span>: {
-                                        <span class="red">"XML_ID"</span>: <span class="blue">"BASE"</span>,
-                                        <span class="red">"NAME"</span>: <span class="blue">"Розничная цена"</span>,
-                                        <span class="red">"PRICE"</span>: <span class="blue">"8530.72"</span>,
-                                        <span class="red">"CURRENCY"</span>: <span class="blue">"RUR"</span>
-                                },
-                                <span class="red">"mprc:"</span>: {
-                                        <span class="red">"XML_ID"</span>: <span class="blue">"BASE"</span>,
-                                        <span class="red">"NAME"</span>: <span class="blue">"МПРЦ"</span>,
-                                        <span class="red">"PRICE"</span>: <span class="blue">"12800.00"</span>,
-                                        <span class="red">"CURRENCY"</span>: <span class="blue">"RUR"</span>
-                                }
-                        },
-                        <span class="red">"STORE:"</span>: {
-                                <span class="red">"NAME"</span>: <span class="blue">"Москва"</span>,
-                                <span class="red">"XML_ID"</span>: <span class="blue">"d56a04ef-8afd-11eb-804d-00155db05a13"</span>,
-                                <span class="red">"STORE_AMOUNT"</span>: <span class="green">28</span>,
-                                <span class="red">"DELIVERY_AMOUNT"</span>: <span class="green">50</span>,
-                                <span class="red">"STORE_PARAMS_INFO"</span>: {
-                                        <span class="red">"LIMIT"</span>: <span class="green">50</span>,
-                                        <span class="red">"HIDE_MORE_LIMIT"</span>: false
-                                },
-                                <span class="red">"DELIVERY_PARAMS_INFO"</span>: {
-                                        <span class="red">"LIMIT"</span>: <span class="green">50</span>,
-                                        <span class="red">"HIDE_MORE_LIMIT"</span>: true
-                                }
-                        }
-                },
-                ...</code></pre>
+                <div class="cart-summary-mobile">
+                  <div class="cart-summary-mobile__summ">18 863,09 ₽<span>1 товар</span></div>
+                  <div class="cart-summary-mobile__btn">
+                    <a class="btn btn_small" href="/personal/order/make/">К оформлению</a>
                   </div>
                 </div>
               </div>
             </div>
+            <!--            -->
+            <div class="" data-entity="basket-bonus-block">
+              <section id="spend-points" class="modal">
+                <div class="modal__overlay">
+                  <div class="modal__body">
+                    <button class="modal__close-button" onclick="$('#spend-points').removeClass('js-show')">
+                      <svg>
+                        <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#close"></use>
+                      </svg>
+                    </button>
+                    <form>
+                      <h1 class="modal__title with-line">Сколько баллов вы хотите потратить?</h1>
+                      <div class="modal__content">
+                        <div class="spend-points">
+                          <div
+                            class="spend-points__bar"
+                            data-total="
+                                8786
+                            ">
+                            <div class="spend-points__bar-current" style="width: 0%">
+                              <span class="spend-points__bar-current-text">
+                                <span>0</span>
+                                °D баллов
+                              </span>
+                            </div>
 
-            <div class="api-page__block">
-              <h2>Получение информации об остатках товара на складе (файловый вариант)</h2>
-              <div class="api-page__part">
-                <p class="api-page__note">
-                  Получение основной информации о товарах на выбранном складе в виде файла в формате Excel. В отличии
-                  от метода /products/get, возвращающего данные на момент запроса, метод /files/get возвращает заранее
-                  сформированный файл. Дата обновления данных указана в файле в соответствующей ячейке
-                </p>
-                <div class="api-page__code">
-                  Method: GET<br />
-                  Path: /files/get
+                            <div class="spend-points__bar-limit" style="width: 0%">
+                              <!--                                <span>--><!--</span>-->
+                              <!--                                °D баллов-->
+                            </div>
+                          </div>
+                          <div class="spend-points__info">
+                            <div class="spend-points__info-part">
+                              <div class="d-points-chip main">
+                                <span class="logo">
+                                  <svg>
+                                    <use xlink:href="/local/templates/general//bonus-assets/img/sprite.svg#d"></use>
+                                  </svg>
+                                </span>
+                                <span class="value" id="spend-points-total">13548</span>
+                              </div>
+                              <p class="spend-points__info-label">Ваши баллы</p>
+                            </div>
+                            <div class="spend-points__info-part">
+                              <p class="spend-points__info-points"><span id="spend-points-limit">0</span> °D баллов</p>
+                              <p class="spend-points__info-label">Можете потратить сейчас</p>
+                            </div>
+                            <div class="spend-points__info-part">
+                              <p class="spend-points__info-points">
+                                <span id="spend-points-current">0</span> °D баллов
+                              </p>
+
+                              <p class="spend-points__info-label">Собираетесь потратить</p>
+                            </div>
+                          </div>
+                        </div>
+                        <p class="spend-points__calculate-title">
+                          Укажите количество баллов, которое вы хотите потратить на покупку.
+                          1&nbsp;балл&nbsp;=&nbsp;1&nbsp;₽.
+                        </p>
+                        <div class="input-block points">
+                          <input class="input-text" type="text" name="points-amount" value="0" />
+                          <p class="spend-points__error-message">Вы не можете потратить указанное количество баллов</p>
+                          <button class="spend-points__minus" type="button">-</button>
+                          <button class="spend-points__plus" type="button">+</button>
+                        </div>
+                      </div>
+                      <div class="spend-points__bottom-block">
+                        <div class="spend-points__balance">
+                          После списания останется<br /><span>8786</span> °D баллов
+                        </div>
+                        <div class="modal__btn-block">
+                          <button
+                            onclick="confirmBonuses(event)"
+                            type="submit"
+                            class="modal__btn-item btn-primary"
+                            disabled="disabled">
+                            Потратить °D баллы
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Входные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Положение</th>
-                      <th>Тип</th>
-                      <th>Обязательный</th>
-                      <th>Описание</th>
-                    </tr>
-                    <tr>
-                      <td>version</td>
-                      <td>Path</td>
-                      <td>Enum</td>
-                      <td>Да</td>
-                      <td>Версия API</td>
-                    </tr>
-                    <tr>
-                      <td>access-token</td>
-                      <td>Path</td>
-                      <td>String</td>
-                      <td>Да</td>
-                      <td>Авторизационный ключ (идентификатор партнёра)</td>
-                    </tr>
-                    <tr>
-                      <td>store-id</td>
-                      <td>Path</td>
-                      <td>GUID</td>
-                      <td>Да</td>
-                      <td>Идентификатор склада (или значение default для склада по-умолчанию)</td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Выходные параметры</h3>
-                <div class="api-page__table-block">
-                  <table>
-                    <colgroup>
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                      <col />
-                    </colgroup>
-                    <tr>
-                      <th>Параметр</th>
-                      <th>Тип</th>
-                      <th>Описание</th>
-                      <th></th>
-                      <th></th>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>File</td>
-                      <td>Excel-файл (формат xlsx)</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-              <div class="api-page__part">
-                <h3>Пример запроса</h3>
-                <div class="api-page__code">
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13">
-                    <span
-                      >https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=e7be65c5-f376-11ea-8047-00155db05a13</span
-                    >
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
-                  <a
-                    class="api-page__code-link"
-                    href="https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=default">
-                    <span>https://api.daichi.ru/b2b/v1/files/get/?access-token=access-demo&store-id=default</span>
-                    <span class="api-page__code-link-icon"></span>
-                  </a>
+              </section>
+            </div>
+          </div>
+
+          <div class="wrap-catalog-slider">
+            <div class="tooltip">
+              <span class="tooltip__title">+ 500 °D баллов</span>
+              <p class="tooltip__desc">Получайте °D баллы за покупку мобильного управления!</p>
+
+              <a href="/promotions/testovaya-aktsiya-s-ballami/" target="_blank" class="tooltip__link"
+                >Подробнее об акции</a
+              >
+            </div>
+            <div class="wrap-catalog-slider__h2">
+              <h2 class="catalog-slider__h2">Сопутствующие товары</h2>
+            </div>
+            <div class="catalog-slider-arrow">
+              <a class="catalog-slider-arrow-prev slick-arrow slick-disabled" href="#" aria-disabled="true" style="">
+                <svg class="ico-svg">
+                  <use xlink:href="#ico-slider-arrow"></use></svg></a
+              ><a class="catalog-slider-arrow-next slick-arrow" href="#" aria-disabled="false" style="">
+                <svg class="ico-svg">
+                  <use xlink:href="#ico-slider-arrow"></use></svg
+              ></a>
+            </div>
+            <div class="catalog-slider slick-initialized slick-slider">
+              <div class="slick-list draggable">
+                <div class="slick-track" style="opacity: 1; width: 10000px; transform: translate3d(-12px, 0px, 0px)">
+                  <div
+                    class="catalog-slider-item slick-slide slick-current slick-active"
+                    data-element-id="11402"
+                    data-score=""
+                    data-slick-index="0"
+                    aria-hidden="false"
+                    tabindex="0">
+                    <div class="catalog-grid-item">
+                      <div class="catalog-grid-item__favorites">
+                        <a data-element-id="11402" class="add-favorites-link js-add-favorites" href="#" tabindex="0"
+                          ><span class="ico-favorites">
+                            <svg class="ico-svg">
+                              <use xlink:href="#ico-favorites"></use></svg></span
+                        ></a>
+                      </div>
+                      <a
+                        href="/catalog/conditioning/aksessuary/sistemy_upravleniya_konditsionirovanie/pulty_upravleniya_besprovodnye_493/kentatsu_526/KIC_101H/"
+                        class="catalog-grid-item__img"
+                        tabindex="0">
+                        <img src="/upload/iblock/c18/c183784fded81d84d75a97861dea9e80.jpg" />
+                      </a>
+                      <div class="catalog-grid-item__title">
+                        <a
+                          href="/catalog/conditioning/aksessuary/sistemy_upravleniya_konditsionirovanie/pulty_upravleniya_besprovodnye_493/kentatsu_526/KIC_101H/"
+                          tabindex="0">
+                          Kentatsu<br />KIC-101H
+                        </a>
+                      </div>
+                      <div class="catalog-grid-item__props">
+                        <span
+                          class="catalog-item-props"
+                          data-tooltip=""
+                          data-position="bottom-start"
+                          data-class="popper-tooltip_catalog">
+                          Kentatsu
+                        </span>
+                      </div>
+                      <div class="catalog-grid-item-footer">
+                        <!--.catalog-grid-item__art-->
+                        <!--        +product-art()-->
+
+                        <div class="catalog-grid-item-footer__bottom">
+                          <div class="catalog-grid-item-footer__noaval">
+                            <a href="javascript:void(0);" class="js-price-not-defined" tabindex="0">
+                              Уточните цену у вашего менеджера</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="catalog-slider-item slick-slide"
+                    data-element-id="10988"
+                    data-score=""
+                    data-slick-index="1"
+                    aria-hidden="true"
+                    tabindex="-1">
+                    <div class="catalog-grid-item">
+                      <div class="catalog-grid-item__favorites">
+                        <a data-element-id="10988" class="add-favorites-link js-add-favorites" href="#" tabindex="-1"
+                          ><span class="ico-favorites">
+                            <svg class="ico-svg">
+                              <use xlink:href="#ico-favorites"></use></svg></span
+                        ></a>
+                      </div>
+                      <a
+                        href="/catalog/conditioning/nastennye-split-sistemy/nastennye-naruzhnye-bloki/KSRTE26HZAN1/"
+                        class="catalog-grid-item__img"
+                        tabindex="-1">
+                        <img src="/upload/iblock/380/38095867542a53eaed9e1eb1e578cb60.jpg" />
+                      </a>
+                      <div class="catalog-grid-item__title">
+                        <a
+                          href="/catalog/conditioning/nastennye-split-sistemy/nastennye-naruzhnye-bloki/KSRTE26HZAN1/"
+                          tabindex="-1">
+                          Kentatsu&nbsp;Team<br />KSRTE26HZAN1
+                        </a>
+                      </div>
+                      <div class="catalog-grid-item__props">
+                        <span
+                          class="catalog-item-props"
+                          data-tooltip=""
+                          data-position="bottom-start"
+                          data-class="popper-tooltip_catalog">
+                          Kentatsu
+                        </span>
+                        <span
+                          class="catalog-item-props js--open-tooltip"
+                          data-tooltip="тестовое описание хладагента"
+                          data-position="bottom-start"
+                          data-class="popper-tooltip_catalog">
+                          R410A
+                        </span>
+                        <span
+                          class="catalog-item-props js--open-tooltip"
+                          data-tooltip="Тестовое описание габаритов"
+                          data-position="bottom-start"
+                          data-class="popper-tooltip_catalog">
+                          776x320x540 мм
+                        </span>
+                      </div>
+                      <div class="catalog-grid-item-footer">
+                        <!--.catalog-grid-item__art-->
+                        <!--        +product-art()-->
+
+                        <div class="catalog-grid-item-footer__bottom">
+                          <div class="catalog-grid-item-footer__noaval">
+                            <a href="javascript:void(0);" class="js-price-not-defined" tabindex="-1">
+                              Уточните цену у вашего менеджера</a
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <!-- <h1>Бытовые кондиционеры / Комплекты</h1>
-          <div class="catalog-section-nav">
-            <a
-              class="catalog-section-nav__link is--active"
-              href="/catalog/konditsionirovanie/bytovye_konditsionery/komplekty/"
-              >Комплекты</a
-            >
-            <a
-              class="catalog-section-nav__link"
-              href="/catalog/konditsionirovanie/bytovye_konditsionery/naruzhnye-bloki/"
-              >Наружные блоки</a
-            >
-            <a
-              class="catalog-section-nav__link"
-              href="/catalog/konditsionirovanie/bytovye_konditsionery/vnutrennie-bloki/"
-              >Внутренние блоки</a
-            >
-            <a
-              class="catalog-section-nav__link"
-              href="/catalog/konditsionirovanie/bytovye_konditsionery/mobilnye_konditsionery/"
-              >Мобильные кондиционеры</a
-            >
-          </div>
-
-          <div class="is--hidden" id="catalog_bytovye_konditsionery">
-            <ul class="dropdown-menu-list">
-              <li><a href="/catalog/konditsionirovanie/multisplit_sistemy/">Мультисплит-системы</a></li>
-              <li>
-                <a href="/catalog/konditsionirovanie/polupromyshlennye_konditsionery/">Полупромышленные кондиционеры</a>
-              </li>
-              <li><a href="/catalog/konditsionirovanie/aksessuary/">Аксессуары</a></li>
-              <li><a href="/catalog/konditsionirovanie/vozdukhoochistiteli/">Воздухоочистители</a></li>
-              <li><a href="/catalog/konditsionirovanie/split_sistemy/">Сплит-системы</a></li>
-              <li><a href="/catalog/konditsionirovanie/okonnye_konditsionery/">Оконные кондиционеры</a></li>
-              <li><a href="/catalog/konditsionirovanie/mobilnye_konditsionery/">Мобильные кондиционеры</a></li>
-            </ul>
-          </div> -->
         </section>
       </div>
 
-      <div class="up-btn"><a class="up-btn__link js-up-btn" href="#">Наверх</a></div>
+      <div class="up-btn" style="display: none"><a class="up-btn__link js-up-btn" href="#">Наверх</a></div>
       <div class="wrap-footer">
         <div class="footer">
           <div class="footer-row">
@@ -2002,55 +2135,69 @@ Status: 401
                 <div class="footer-nav-col">
                   <ul class="footer-nav">
                     <li class="footer-nav__item footer-nav__item_h">
-                      <a href="/catalog/konditsionirovanie/" class="main-nav-list__link main-nav-list__link"
-                        >Кондиционирование</a
+                      <a href="/catalog/conditioning/" class="main-nav-list__link">Кондиционирование</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/conditioning/nastennye-split-sistemy/" class="main-nav-list__link"
+                        >Настенные сплит-системы</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a
-                        href="/catalog/konditsionirovanie/bytovye_konditsionery/"
-                        class="main-nav-list__link main-nav-list__link"
-                        >Бытовые кондиционеры</a
-                      >
-                    </li>
-
-                    <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/multisplit_sistemy/" class="main-nav-list__link"
+                      <a href="/catalog/conditioning/multisplit-sistemy/" class="main-nav-list__link"
                         >Мультисплит-системы</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/polupromyshlennye_konditsionery/" class="main-nav-list__link"
-                        >Полупромышленные кондиционеры</a
+                      <a href="/catalog/conditioning/kassetnye-konditsionery/" class="main-nav-list__link"
+                        >Кассетные кондиционеры</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/vozdukhoochistiteli/" class="main-nav-list__link"
+                      <a href="/catalog/conditioning/kanalnye-konditsionery/" class="main-nav-list__link"
+                        >Канальные кондиционеры</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/conditioning/vozdukhoochistiteli_18/" class="main-nav-list__link"
                         >Воздухоочистители</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/aksessuary/" class="main-nav-list__link">Аксессуары</a>
-                    </li>
-
-                    <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/mobilnye_konditsionery/" class="main-nav-list__link"
-                        >Мобильные кондиционеры</a
+                      <a href="/catalog/conditioning/napolno-potolochnye-konditsionery/" class="main-nav-list__link"
+                        >Напольно-потолочные кондиционеры</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/okonnye_konditsionery/" class="main-nav-list__link"
+                      <a href="/catalog/conditioning/split_sistemy/" class="main-nav-list__link">Сплит-системы</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/conditioning/kolonnye-konditsionery/" class="main-nav-list__link"
+                        >Колонные кондиционеры</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/conditioning/okonnye-konditsionery/" class="main-nav-list__link"
                         >Оконные кондиционеры</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/konditsionirovanie/split_sistemy/" class="main-nav-list__link">Сплит-системы</a>
+                      <a href="/catalog/conditioning/mobilnye-konditsionery/" class="main-nav-list__link"
+                        >Мобильные кондиционеры</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/conditioning/aksessuary/" class="main-nav-list__link">Аксессуары</a>
                     </li>
                   </ul>
                 </div>
@@ -2062,26 +2209,14 @@ Status: 401
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/ventilyatsiya/pritochno_vytyazhnye_ustanovki/" class="main-nav-list__link"
-                        >Приточно-вытяжные установки</a
-                      >
-                    </li>
-
-                    <li class="footer-nav__item">
-                      <a href="/catalog/ventilyatsiya/pritochnye_ustanovki/" class="main-nav-list__link"
-                        >Приточные установки</a
-                      >
-                    </li>
-
-                    <li class="footer-nav__item">
-                      <a href="/catalog/ventilyatsiya/vytyazhnye_sektsii/" class="main-nav-list__link"
-                        >Вытяжные секции</a
+                      <a href="/catalog/ventilyatsiya/vozdukhoochistiteli/" class="main-nav-list__link"
+                        >Воздухоочистители</a
                       >
                     </li>
 
                     <li class="footer-nav__item">
                       <a
-                        href="/catalog/ventilyatsiya/kompaktnye_ventilyatsionnye_ustanovki/"
+                        href="/catalog/ventilyatsiya/kompaktnye-ventilyatsionnye-ustanovki/"
                         class="main-nav-list__link"
                         >Компактные вентиляционные установки</a
                       >
@@ -2090,11 +2225,51 @@ Status: 401
 
                   <ul class="footer-nav">
                     <li class="footer-nav__item footer-nav__item_h">
-                      <a href="/catalog/otoplenie/" class="main-nav-list__link">Отопление</a>
+                      <a href="/catalog/heat/" class="main-nav-list__link">Отопление</a>
                     </li>
 
                     <li class="footer-nav__item">
-                      <a href="/catalog/otoplenie/otopitelnye_kotly/" class="main-nav-list__link">Отопительные котлы</a>
+                      <a href="/catalog/heat/chugunnye-tverdotoplivnye/" class="main-nav-list__link"
+                        >Чугунные твердотопливные</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/napolnye-gazovye-kondensatsionnye/" class="main-nav-list__link"
+                        >Напольные газовые конденсационные</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/chugunnye-gazovye/" class="main-nav-list__link">Чугунные газовые</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/stalnye-tverdotoplivnye/" class="main-nav-list__link"
+                        >Стальные твердотопливные</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/nastennye-gazovye-kondensatsionnye/" class="main-nav-list__link"
+                        >Настенные газовые конденсационные</a
+                      >
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/otopitelnye_kotly/" class="main-nav-list__link">Отопительные котлы</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/nastennye-gazovye/" class="main-nav-list__link">Настенные газовые</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/konvektory/" class="main-nav-list__link">Конвекторы</a>
+                    </li>
+
+                    <li class="footer-nav__item">
+                      <a href="/catalog/heat/otoplenie-aksessuary/" class="main-nav-list__link">Аксессуары</a>
                     </li>
                   </ul>
                 </div>
