@@ -1,0 +1,20 @@
+.header-top-nav__alert {
+  display: block;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-2px);
+
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: #fc4242;
+  }
+}
+
+.header-city {
+  flex-shrink: 0;
+}
+
+.header-top-nav__item {
+  flex-shrink: 0;
+}
