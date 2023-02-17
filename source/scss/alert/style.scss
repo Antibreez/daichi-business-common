@@ -3,10 +3,17 @@
   width: 24px;
   height: 24px;
   transform: translateY(-2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   svg {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     fill: #fc4242;
   }
 }
@@ -17,4 +24,69 @@
 
 .header-top-nav__item {
   flex-shrink: 0;
+}
+
+.erp-alert {
+  .popup-pane__title {
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: #fc4242;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  .wrap-popup-pane {
+    max-width: 970px;
+  }
+
+  .popup-pane__footer {
+    display: none;
+  }
+
+  .popup-pane__title {
+    margin-bottom: 32px;
+  }
+
+  .erp-alert-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-3px);
+    margin-right: 12px;
+  }
+
+  .erp-alert-title {
+    font-size: 32px;
+    line-height: 115%;
+  }
+}
+
+.alert_info {
+  padding-right: 50px;
+
+  &.warning {
+    background-color: #fff1f1;
+    color: #1a1a1a;
+    display: flex;
+  }
+}
+
+.alert_warning-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: #fc4242;
+  }
 }

@@ -74,4 +74,36 @@ $(window).on("load", function () {
       $notification.removeClass("opened");
     }
   });
+
+  window.showAlert = function () {
+    let modal = new CPopup();
+
+    const titleText = `
+      <span class="erp-alert-icon">
+        <svg>
+          <use xlink:href="#ico-alert-warning"></use>
+        </svg>
+      </span>
+      <span class="erp-alert-title">Внимание!</span>
+    `;
+
+    modal.setTitle(titleText);
+    modal.setText(`
+      В связи с проведением технических работ на сервере, могут некорректно отображаться данные оформленных заказов, а также происходить задержки при выставлении счётов.<br/>
+      Информация в карточке заказа будет обновлена автоматически после завершения технических работ.
+    `);
+
+    modal.showPopup();
+
+    let tplParams = $.extend({}, modal.defaultTplParams, modal.tplParams);
+    let contentTarget = tplParams.templateSelector;
+    let containerId = (contentTarget + "-outer-" + modal.tplParams.uniqId).substr(1);
+    $("#" + containerId)
+      .parent()
+      .addClass("erp-alert");
+  };
+
+  $(document).on("click", ".header-top-nav__alert", function () {
+    showAlert();
+  });
 });
