@@ -446,11 +446,12 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 8px;
-    min-width: 1296px; }
+    min-width: 860px; }
     .api-page__table-block table col {
       width: 17.3%; }
       .api-page__table-block table col:first-child {
-        width: 18.8%; }
+        width: 18.8%;
+        min-width: 200px; }
       .api-page__table-block table col:nth-child(5) {
         width: 29.3%; }
     .api-page__table-block table td,
