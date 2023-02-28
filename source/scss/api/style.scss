@@ -500,13 +500,14 @@
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 8px;
-    min-width: 1296px;
+    min-width: 860px;
 
     col {
       width: 17.3%;
 
       &:first-child {
         width: 18.8%;
+        min-width: 200px;
       }
 
       &:nth-child(5) {
