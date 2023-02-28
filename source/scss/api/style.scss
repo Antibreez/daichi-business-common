@@ -502,6 +502,10 @@
     border-spacing: 0 8px;
     min-width: 860px;
 
+    @media (max-width: 1024px) {
+      min-width: 1200px;
+    }
+
     col {
       width: 17.3%;
 
