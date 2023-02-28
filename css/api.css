@@ -447,6 +447,9 @@
     border-collapse: separate;
     border-spacing: 0 8px;
     min-width: 860px; }
+    @media (max-width: 1024px) {
+      .api-page__table-block table {
+        min-width: 1200px; } }
     .api-page__table-block table col {
       width: 17.3%; }
       .api-page__table-block table col:first-child {
