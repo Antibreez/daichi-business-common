@@ -13,13 +13,19 @@
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  position: absolute;
+  top: 14px;
+  right: 2px; }
   .header-top-nav__alert:hover {
     cursor: pointer; }
   .header-top-nav__alert svg {
     width: 18px;
     height: 18px;
     fill: #fc4242; }
+
+.header-top {
+  position: relative; }
 
 .header-city {
   -ms-flex-negative: 0;
