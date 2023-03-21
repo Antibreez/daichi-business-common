@@ -1,0 +1,7 @@
+.ico-personal-nav {
+  padding: 16px; }
+  .ico-personal-nav svg,
+  .ico-personal-nav img {
+    -webkit-transform: translateY(-4px);
+        -ms-transform: translateY(-4px);
+            transform: translateY(-4px); }

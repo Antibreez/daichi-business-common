@@ -1,0 +1,1 @@
+{"version":3,"sources":["side-nav/style.scss","side-nav.css"],"names":[],"mappings":"AAAA,kBACE,QAAA,KCEA,sBDHF,sBAKI,kBAAA,iBAAA,cAAA,iBAAA,UAAA","file":"side-nav.min.css","sourcesContent":[".ico-personal-nav {\n  padding: 16px;\n\n  svg,\n  img {\n    transform: translateY(-4px);\n  }\n}\n",null]}
