@@ -43,7 +43,7 @@ $(window).on("load", function () {
       .addClass("api-page__api-key-cl");
   };
 
-  onApiKeyRequestSended();
+  //onApiKeyRequestSended();
 
   $(document).on("click", ".api-page__promo-btn-received", async function (e) {
     const $target = $(e.currentTarget);
