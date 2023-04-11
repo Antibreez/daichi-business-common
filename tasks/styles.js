@@ -174,6 +174,29 @@ const stylesLoan = () => {
     .pipe(gulp.dest("build/css"));
 };
 
+const stylesOrder = () => {
+  return gulp
+    .src("source/scss/order.scss")
+    .pipe(plumber())
+    .pipe(bulk())
+    .pipe(sass())
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 8 versions"],
+        browsers: [
+          "Android >= 4",
+          "Chrome >= 20",
+          "Firefox >= 24",
+          "Explorer >= 11",
+          "iOS >= 6",
+          "Opera >= 12",
+          "Safari >= 6",
+        ],
+      })
+    )
+    .pipe(gulp.dest("build/css"));
+};
+
 const stylesMin = () => {
   return gulp
     .src("source/scss/style.scss")
@@ -475,6 +498,49 @@ const stylesMinLoan = () => {
     .pipe(server.stream());
 };
 
+const stylesMinOrder = () => {
+  return gulp
+    .src("source/scss/order.scss")
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(bulk())
+    .pipe(sass())
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 8 versions"],
+        browsers: [
+          "Android >= 4",
+          "Chrome >= 20",
+          "Firefox >= 24",
+          "Explorer >= 11",
+          "iOS >= 6",
+          "Opera >= 12",
+          "Safari >= 6",
+        ],
+      })
+    )
+    .pipe(
+      clean(
+        {
+          level: 2,
+        },
+        (details) => {
+          console.log(chalk`
+{bold CSS: ${details.name}}
+{bgRed  Original size: ${details.stats.originalSize} bytes }
+{bgGreen.black  Minified size: ${details.stats.minifiedSize} bytes }
+==================
+{bgYellow.black  Saved: ${Math.round(details.stats.efficiency * 100)}% }
+`);
+        }
+      )
+    )
+    .pipe(rename("order.min.css"))
+    .pipe(sourcemap.write("."))
+    .pipe(gulp.dest("build/css"))
+    .pipe(server.stream());
+};
+
 const styles = gulp.series(
   gulp.parallel(
     stylesFull,
@@ -490,7 +556,9 @@ const styles = gulp.series(
     stylesSideNav,
     stylesMinSideNav,
     stylesLoan,
-    stylesMinLoan
+    stylesMinLoan,
+    stylesOrder,
+    stylesMinOrder
   )
 );
 
