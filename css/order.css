@@ -13,10 +13,10 @@
   padding-bottom: 20px; }
   @media (max-width: 1024px) {
     .order-result {
-      padding-top: 200px; } }
+      padding-top: 155px; } }
   @media (max-width: 767px) {
     .order-result {
-      padding-top: 166px; } }
+      padding-top: 120px; } }
   .order-result__icon {
     width: 86px;
     height: 86px;
